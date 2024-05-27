@@ -117,4 +117,5 @@ def generate_launch_description():
         load_joint_state_controller,
         #joint_state_publisher_gui_node
         joint_state_publisher_node
+        #yarrak ye
     ])
