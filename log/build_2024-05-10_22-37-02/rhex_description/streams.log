@@ -1,0 +1,52 @@
+[1.077s] Invoking command in '/home/ege/ros2_ws/build/rhex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake /home/ege/ros2_ws/src/rhex_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ege/ros2_ws/install/rhex_description
+[1.164s] -- The C compiler identification is GNU 11.4.0
+[1.221s] -- The CXX compiler identification is GNU 11.4.0
+[1.239s] -- Detecting C compiler ABI info
+[1.320s] -- Detecting C compiler ABI info - done
+[1.332s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.333s] -- Detecting C compile features
+[1.333s] -- Detecting C compile features - done
+[1.345s] -- Detecting CXX compiler ABI info
+[1.431s] -- Detecting CXX compiler ABI info - done
+[1.439s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.439s] -- Detecting CXX compile features
+[1.439s] -- Detecting CXX compile features - done
+[1.442s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.584s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.635s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.732s] -- Configuring done (0.6s)
+[1.734s] -- Generating done (0.0s)
+[1.734s] -- Build files have been written to: /home/ege/ros2_ws/build/rhex_description
+[1.740s] Invoked command in '/home/ege/ros2_ws/build/rhex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake /home/ege/ros2_ws/src/rhex_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ege/ros2_ws/install/rhex_description
+[1.742s] Invoking command in '/home/ege/ros2_ws/build/rhex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --build /home/ege/ros2_ws/build/rhex_description -- -j16 -l16
+[1.826s] Invoked command in '/home/ege/ros2_ws/build/rhex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --build /home/ege/ros2_ws/build/rhex_description -- -j16 -l16
+[1.873s] Invoking command in '/home/ege/ros2_ws/build/rhex_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --install /home/ege/ros2_ws/build/rhex_description
+[1.916s] -- Install configuration: ""
+[1.917s] -- Execute custom install script
+[1.917s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/accessories.xacro
+[1.922s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/legs.xacro
+[1.924s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/rpk10_chassis.dae
+[1.927s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/rpk10_leg.dae
+[1.929s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/miscellaneous.xacro
+[1.932s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/robot.urdf.xacro
+[1.935s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/robot_gazebo.xacro
+[1.937s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/launch/display_champ.launch.py
+[1.940s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/launch/display_rhex.launch.py
+[1.942s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/config/rhex_ros_control.yaml
+[1.945s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/world/rhex_world.world
+[1.947s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/ament_index/resource_index/package_run_dependencies/rhex_description
+[1.950s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/ament_index/resource_index/parent_prefix_path/rhex_description
+[1.953s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/environment/ament_prefix_path.sh
+[1.956s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/environment/ament_prefix_path.dsv
+[1.959s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/environment/path.sh
+[1.961s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/environment/path.dsv
+[1.966s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/local_setup.bash
+[1.968s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/local_setup.sh
+[1.969s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/local_setup.zsh
+[1.971s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/local_setup.dsv
+[1.974s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/package.dsv
+[1.976s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/ament_index/resource_index/packages/rhex_description
+[1.980s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/cmake/rhex_descriptionConfig.cmake
+[1.984s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/cmake/rhex_descriptionConfig-version.cmake
+[1.987s] -- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/package.xml
+[1.997s] Invoked command in '/home/ege/ros2_ws/build/rhex_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --install /home/ege/ros2_ws/build/rhex_description

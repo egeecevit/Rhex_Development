@@ -1,0 +1,4 @@
+[console_scripts]
+dynamic_joint_state_control = rhex_control.dynamic_joint_state_control:main
+torque_control = rhex_control.torque_control:main
+

@@ -1,0 +1,4 @@
+[console_scripts]
+number_counter = activity_2.number_counter:main
+number_publisher = activity_2.number_publisher:main
+

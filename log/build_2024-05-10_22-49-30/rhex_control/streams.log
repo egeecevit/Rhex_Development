@@ -1,0 +1,16 @@
+[1.795s] Invoking command in '/home/ege/ros2_ws/build/rhex_control': PYTHONPATH=/home/ege/ros2_ws/build/rhex_control/prefix_override:/home/ege/ros2_ws/install/rhex_control/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ege/ros2_ws/build/rhex_control/build --no-deps symlink_data
+[2.035s] running develop
+[2.156s] running egg_info
+[2.156s] writing rhex_control.egg-info/PKG-INFO
+[2.156s] writing dependency_links to rhex_control.egg-info/dependency_links.txt
+[2.157s] writing entry points to rhex_control.egg-info/entry_points.txt
+[2.157s] writing requirements to rhex_control.egg-info/requires.txt
+[2.157s] writing top-level names to rhex_control.egg-info/top_level.txt
+[2.158s] reading manifest file 'rhex_control.egg-info/SOURCES.txt'
+[2.159s] writing manifest file 'rhex_control.egg-info/SOURCES.txt'
+[2.160s] running build_ext
+[2.160s] Creating /home/ege/ros2_ws/install/rhex_control/lib/python3.10/site-packages/rhex-control.egg-link (link to .)
+[2.160s] 
+[2.160s] Installed /home/ege/ros2_ws/build/rhex_control
+[2.161s] running symlink_data
+[2.183s] Invoked command in '/home/ege/ros2_ws/build/rhex_control' returned '0': PYTHONPATH=/home/ege/ros2_ws/build/rhex_control/prefix_override:/home/ege/ros2_ws/install/rhex_control/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ege/ros2_ws/build/rhex_control/build --no-deps symlink_data

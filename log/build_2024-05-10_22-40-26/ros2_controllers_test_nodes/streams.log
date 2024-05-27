@@ -1,0 +1,18 @@
+[1.560s] Invoking command in '/home/ege/ros2_ws/build/ros2_controllers_test_nodes': PYTHONPATH=/home/ege/ros2_ws/build/ros2_controllers_test_nodes/prefix_override:/home/ege/ros2_ws/install/ros2_controllers_test_nodes/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ege/ros2_ws/build/ros2_controllers_test_nodes/build --no-deps symlink_data
+[1.780s] running develop
+[1.913s] running egg_info
+[1.913s] writing ros2_controllers_test_nodes.egg-info/PKG-INFO
+[1.914s] writing dependency_links to ros2_controllers_test_nodes.egg-info/dependency_links.txt
+[1.914s] writing entry points to ros2_controllers_test_nodes.egg-info/entry_points.txt
+[1.914s] writing requirements to ros2_controllers_test_nodes.egg-info/requires.txt
+[1.914s] writing top-level names to ros2_controllers_test_nodes.egg-info/top_level.txt
+[1.916s] reading manifest file 'ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[1.917s] writing manifest file 'ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[1.919s] running build_ext
+[1.919s] Creating /home/ege/ros2_ws/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2-controllers-test-nodes.egg-link (link to .)
+[1.920s] Installing publisher_forward_position_controller script to /home/ege/ros2_ws/install/ros2_controllers_test_nodes/lib/ros2_controllers_test_nodes
+[1.920s] Installing publisher_joint_trajectory_controller script to /home/ege/ros2_ws/install/ros2_controllers_test_nodes/lib/ros2_controllers_test_nodes
+[1.920s] 
+[1.920s] Installed /home/ege/ros2_ws/build/ros2_controllers_test_nodes
+[1.920s] running symlink_data
+[1.945s] Invoked command in '/home/ege/ros2_ws/build/ros2_controllers_test_nodes' returned '0': PYTHONPATH=/home/ege/ros2_ws/build/ros2_controllers_test_nodes/prefix_override:/home/ege/ros2_ws/install/ros2_controllers_test_nodes/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ege/ros2_ws/build/ros2_controllers_test_nodes/build --no-deps symlink_data

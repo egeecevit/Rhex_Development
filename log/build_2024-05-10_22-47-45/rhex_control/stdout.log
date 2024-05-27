@@ -1,0 +1,14 @@
+running develop
+running egg_info
+writing rhex_control.egg-info/PKG-INFO
+writing dependency_links to rhex_control.egg-info/dependency_links.txt
+writing entry points to rhex_control.egg-info/entry_points.txt
+writing requirements to rhex_control.egg-info/requires.txt
+writing top-level names to rhex_control.egg-info/top_level.txt
+reading manifest file 'rhex_control.egg-info/SOURCES.txt'
+writing manifest file 'rhex_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ege/ros2_ws/install/rhex_control/lib/python3.10/site-packages/rhex-control.egg-link (link to .)
+
+Installed /home/ege/ros2_ws/build/rhex_control
+running symlink_data

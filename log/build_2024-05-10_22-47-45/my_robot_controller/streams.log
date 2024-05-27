@@ -1,0 +1,19 @@
+[1.709s] Invoking command in '/home/ege/ros2_ws/build/my_robot_controller': PYTHONPATH=/home/ege/ros2_ws/build/my_robot_controller/prefix_override:/home/ege/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ege/ros2_ws/build/my_robot_controller/build --no-deps symlink_data
+[2.021s] running develop
+[2.240s] running egg_info
+[2.241s] writing my_robot_controller.egg-info/PKG-INFO
+[2.241s] writing dependency_links to my_robot_controller.egg-info/dependency_links.txt
+[2.241s] writing entry points to my_robot_controller.egg-info/entry_points.txt
+[2.241s] writing requirements to my_robot_controller.egg-info/requires.txt
+[2.241s] writing top-level names to my_robot_controller.egg-info/top_level.txt
+[2.243s] reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.243s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.244s] running build_ext
+[2.244s] Creating /home/ege/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[2.245s] Installing draw_circle script to /home/ege/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.245s] Installing pose_subscriber script to /home/ege/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.245s] Installing test_node script to /home/ege/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.245s] 
+[2.245s] Installed /home/ege/ros2_ws/build/my_robot_controller
+[2.245s] running symlink_data
+[2.281s] Invoked command in '/home/ege/ros2_ws/build/my_robot_controller' returned '0': PYTHONPATH=/home/ege/ros2_ws/build/my_robot_controller/prefix_override:/home/ege/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} _=/usr/bin/env /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ege/ros2_ws/build/my_robot_controller/build --no-deps symlink_data

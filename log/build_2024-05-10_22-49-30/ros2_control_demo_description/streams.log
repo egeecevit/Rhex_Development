@@ -1,0 +1,50 @@
+[0.084s] Invoking command in '/home/ege/ros2_ws/build/ros2_control_demo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rhex_control:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --build /home/ege/ros2_ws/build/ros2_control_demo_description -- -j16 -l16
+[1.217s] Invoked command in '/home/ege/ros2_ws/build/ros2_control_demo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rhex_control:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --build /home/ege/ros2_ws/build/ros2_control_demo_description -- -j16 -l16
+[1.326s] Invoking command in '/home/ege/ros2_ws/build/ros2_control_demo_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rhex_control:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --install /home/ege/ros2_ws/build/ros2_control_demo_description
+[1.371s] -- Install configuration: ""
+[1.371s] -- Execute custom install script
+[1.372s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/rrbot/urdf/rrbot.materials.xacro
+[1.372s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/rrbot/urdf/rrbot_description.urdf.xacro
+[1.372s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/rrbot/rviz/rrbot.rviz
+[1.373s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/urdf/diffbot.materials.xacro
+[1.373s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/urdf/diffbot_description.urdf.xacro
+[1.374s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/rviz/diffbot.rviz
+[1.374s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/diffbot/rviz/diffbot_view.rviz
+[1.378s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/carlikebot/urdf/carlikebot.materials.xacro
+[1.378s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/carlikebot/urdf/carlikebot_description.urdf.xacro
+[1.378s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/carlikebot/rviz/carlikebot.rviz
+[1.378s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/carlikebot/rviz/carlikebot_view.rviz
+[1.378s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_0.stl
+[1.378s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_1.stl
+[1.379s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_2.stl
+[1.379s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_3.stl
+[1.379s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_4.stl
+[1.379s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_5.stl
+[1.379s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/collision/link_6.stl
+[1.381s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_0.dae
+[1.381s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_1.dae
+[1.381s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_2.dae
+[1.381s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_3.dae
+[1.381s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_4.dae
+[1.381s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_5.dae
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/meshes/visual/link_6.dae
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/srdf/r6bot.srdf
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/urdf/inc/create_link.xacro
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/urdf/r6bot_description.urdf.xacro
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/r6bot/rviz/view_robot.rviz
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_description
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_description
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/ament_prefix_path.sh
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/ament_prefix_path.dsv
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/path.sh
+[1.382s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/environment/path.dsv
+[1.383s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.bash
+[1.383s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.sh
+[1.383s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.zsh
+[1.383s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/local_setup.dsv
+[1.383s] -- Symlinking: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/package.dsv
+[1.387s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ament_index/resource_index/packages/ros2_control_demo_description
+[1.387s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/cmake/ros2_control_demo_descriptionConfig.cmake
+[1.387s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/cmake/ros2_control_demo_descriptionConfig-version.cmake
+[1.387s] -- Up-to-date symlink: /home/ege/ros2_ws/install/ros2_control_demo_description/share/ros2_control_demo_description/package.xml
+[1.422s] Invoked command in '/home/ege/ros2_ws/build/ros2_control_demo_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ege/ros2_ws/install/rhex_control:/home/ege/ros2_ws/install/rqt_joint_trajectory_controller:/home/ege/ros2_ws/install/rqt_controller_manager:/home/ege/ros2_ws/install/ros2controlcli:/home/ege/ros2_ws/install/ros2_controllers_test_nodes:/home/ege/ros2_ws/install/my_robot_controller:/home/ege/ros2_ws/install/my_py_pkg:/home/ege/ros2_ws/install/activity_2:/home/ege/turtlebot3_ws/install/turtlebot3_teleop:/home/ege/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble _=/usr/bin/env /home/ege/.local/bin/cmake --install /home/ege/ros2_ws/build/ros2_control_demo_description

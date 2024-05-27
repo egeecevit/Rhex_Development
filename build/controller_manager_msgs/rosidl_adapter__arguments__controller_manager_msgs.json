@@ -1,0 +1,19 @@
+{
+  "package_name": "controller_manager_msgs",
+  "non_idl_tuples": [
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:msg/ControllerState.msg",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:msg/ChainConnection.msg",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:msg/HardwareComponentState.msg",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:msg/HardwareInterface.msg",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/ConfigureController.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/ListControllers.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/ListControllerTypes.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/ListHardwareComponents.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/ListHardwareInterfaces.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/LoadController.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/ReloadControllerLibraries.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/SetHardwareComponentState.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/SwitchController.srv",
+    "/home/ege/ros2_ws/src/ros-controls/ros2_control/controller_manager_msgs:srv/UnloadController.srv"
+  ]
+}
