@@ -2,6 +2,7 @@
 /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/legs.xacro
 /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/rpk10_chassis.dae
 /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/rpk10_leg.dae
+/home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/upper_case.dae
 /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/miscellaneous.xacro
 /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/robot.urdf.xacro
 /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/robot_gazebo.xacro

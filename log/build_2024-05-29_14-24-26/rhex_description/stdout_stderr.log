@@ -1,0 +1,27 @@
+-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ege/ros2_ws/build/rhex_description
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/accessories.xacro
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/legs.xacro
+-- Symlinking: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/Faydalı Yük Simülasyon v1 (1).stl
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/rpk10_chassis.dae
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/meshes/rpk10_leg.dae
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/miscellaneous.xacro
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/robot.urdf.xacro
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/urdf/robot_gazebo.xacro
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/launch/display_champ.launch.py
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/launch/display_rhex.launch.py
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/config/rhex_ros_control.yaml
+-- Up-to-date symlink: /home/ege/ros2_ws/install/rhex_description/share/rhex_description/world/rhex_world.world
+[31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:100 (message):
+  ament_cmake_symlink_install_directory() can't find
+  '/home/ege/ros2_ws/src/rhex_description/meshes'
+Call Stack (most recent call first):
+  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:314 (ament_cmake_symlink_install_directory)
+  cmake_install.cmake:46 (include)
+
+[0m
