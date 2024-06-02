@@ -1,12 +1,16 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
-from launch.substitutions import Command
+from launch.substitutions import ( 
+    Command, 
+    PathJoinSubstitution
+)
 from launch_ros.actions import Node
 import os
 from ament_index_python.packages import get_package_share_path
 from ament_index_python.packages import get_package_share_directory
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     urdf_path = os.path.join(get_package_share_path('rhex_description'),'urdf','robot.urdf.xacro')
@@ -25,7 +29,13 @@ def generate_launch_description():
     # Pass the launch argument 'lidar_enabled' to the xacro file
     robot_description = Command(['xacro ', urdf_path, ' lidar_enabled:=', lidar_enabled])
 
+    declare_world = DeclareLaunchArgument(
+        name="world",
+        default_value="empty.world",
+        description='world to launch rhex in'
+    )
 
+    world_config = LaunchConfiguration("world")
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -79,8 +89,19 @@ def generate_launch_description():
         output='screen',
     )
 
+
     gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory("gazebo_ros"), "launch"),
+            "/gazebo.launch.py",
+        ]),
+        launch_arguments={
+            "world": PathJoinSubstitution([
+                    FindPackageShare('rhex_description'),
+                    'world',
+                    world_config]),
+            "verbose": "true",
+        }.items()
     )
 
     controller_node = Node(
@@ -117,14 +138,15 @@ def generate_launch_description():
         declare_use_sim_time,
         declare_host,
         declare_port,
+        declare_world,
         DeclareLaunchArgument(
             'lidar_enabled',
             default_value='false',
             description='Use lidar_enabled if true'),
         robot_state_publisher_node,
-        #gazebo,
-        gzserver_cmd,
-        gzclient_cmd,
+        gazebo,
+        #gzserver_cmd,
+        #gzclient_cmd,
         spawn_entity,
         load_effort_controller,
         load_joint_state_controller,
