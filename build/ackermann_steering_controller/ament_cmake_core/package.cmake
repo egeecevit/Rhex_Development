@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "ackermann_steering_controller")
-set(ackermann_steering_controller_VERSION "2.34.0")
+set(ackermann_steering_controller_VERSION "2.35.0")
 set(ackermann_steering_controller_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Dr.-Ing. Denis Štogl <denis.stogl@stoglrobotics.de>")
 set(ackermann_steering_controller_BUILD_DEPENDS "generate_parameter_library" "control_msgs" "controller_interface" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_lifecycle" "std_srvs" "steering_controllers_library")
 set(ackermann_steering_controller_BUILDTOOL_DEPENDS "ament_cmake")

@@ -1,1 +1,1 @@
-prepend-non-duplicate;PYTHONPATH;/home/ege/ros2_ws/build/ros2controlcli
+prepend-non-duplicate;PYTHONPATH;/home/dev-ros2/development/build/ros2controlcli

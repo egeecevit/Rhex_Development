@@ -16,7 +16,7 @@ set(_joint_trajectory_controller_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT joint_trajectory_controller_FIND_QUIETLY)
-  message(STATUS "Found joint_trajectory_controller: 2.34.0 (${joint_trajectory_controller_DIR})")
+  message(STATUS "Found joint_trajectory_controller: 2.35.0 (${joint_trajectory_controller_DIR})")
 endif()
 
 # warn when using a deprecated package

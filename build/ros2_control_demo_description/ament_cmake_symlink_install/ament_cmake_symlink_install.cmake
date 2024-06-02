@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ros2_control_demo_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ros2_control_demo_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ros2_control_demo_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ros2_control_demo_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ros2_control_demo_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ros2_control_demo_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/ege/ros2_ws/install/ros2_control_demo_description/${destination}")
+      set(destination "/home/dev-ros2/development/install/ros2_control_demo_description/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -311,55 +311,55 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "rrbot/urdf" "rrbot/rviz" "DESTINATION" "share/ros2_control_demo_description/rrbot")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "rrbot/urdf" "rrbot/rviz" "DESTINATION" "share/ros2_control_demo_description/rrbot")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "rrbot/urdf" "rrbot/rviz" "DESTINATION" "share/ros2_control_demo_description/rrbot")
 
 # install(DIRECTORY "diffbot/urdf" "diffbot/rviz" "DESTINATION" "share/ros2_control_demo_description/diffbot")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "diffbot/urdf" "diffbot/rviz" "DESTINATION" "share/ros2_control_demo_description/diffbot")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "diffbot/urdf" "diffbot/rviz" "DESTINATION" "share/ros2_control_demo_description/diffbot")
 
 # install(DIRECTORY "carlikebot/urdf" "carlikebot/rviz" "DESTINATION" "share/ros2_control_demo_description/carlikebot")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "carlikebot/urdf" "carlikebot/rviz" "DESTINATION" "share/ros2_control_demo_description/carlikebot")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "carlikebot/urdf" "carlikebot/rviz" "DESTINATION" "share/ros2_control_demo_description/carlikebot")
 
 # install(DIRECTORY "r6bot/meshes" "r6bot/srdf" "r6bot/urdf" "r6bot/rviz" "DESTINATION" "share/ros2_control_demo_description/r6bot")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "r6bot/meshes" "r6bot/srdf" "r6bot/urdf" "r6bot/rviz" "DESTINATION" "share/ros2_control_demo_description/r6bot")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" DIRECTORY "r6bot/meshes" "r6bot/srdf" "r6bot/urdf" "r6bot/rviz" "DESTINATION" "share/ros2_control_demo_description/r6bot")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ros2_control_demo_description/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ros2_control_demo_description/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ros2_control_demo_description/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ros2_control_demo_description/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ros2_control_demo_description/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ros2_control_demo_description/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control_demo_description/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control_demo_description")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control_demo_description")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control_demo_description")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control_demo_description")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control_demo_description")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control_demo_description")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control_demo_description")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control_demo_description")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control_demo_description")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control_demo_description")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control_demo_description")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control_demo_description")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control_demo_description")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control_demo_description")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control_demo_description")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control_demo_description")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control_demo_description")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control_demo_description")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control_demo_description")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control_demo_description")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control_demo_description" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig.cmake" "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig-version.cmake" "DESTINATION" "share/ros2_control_demo_description/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig.cmake" "/home/ege/ros2_ws/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig-version.cmake" "DESTINATION" "share/ros2_control_demo_description/cmake")
+# install(FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig.cmake" "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig-version.cmake" "DESTINATION" "share/ros2_control_demo_description/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig.cmake" "/home/dev-ros2/development/build/ros2_control_demo_description/ament_cmake_core/ros2_control_demo_descriptionConfig-version.cmake" "DESTINATION" "share/ros2_control_demo_description/cmake")
 
-# install(FILES "/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description/package.xml" "DESTINATION" "share/ros2_control_demo_description")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/ros2_control_demo_description/package.xml" "DESTINATION" "share/ros2_control_demo_description")
+# install(FILES "/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description/package.xml" "DESTINATION" "share/ros2_control_demo_description")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description" FILES "/home/dev-ros2/development/src/ros-controls/ros2_control_demos/ros2_control_demo_description/package.xml" "DESTINATION" "share/ros2_control_demo_description")

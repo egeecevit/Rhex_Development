@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "tricycle_controller")
-set(tricycle_controller_VERSION "2.34.0")
+set(tricycle_controller_VERSION "2.35.0")
 set(tricycle_controller_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Tony Najjar <tony.najjar@logivations.com>")
 set(tricycle_controller_BUILD_DEPENDS "ackermann_msgs" "backward_ros" "builtin_interfaces" "controller_interface" "geometry_msgs" "hardware_interface" "nav_msgs" "pluginlib" "rclcpp" "rclcpp_lifecycle" "rcpputils" "realtime_tools" "std_srvs" "tf2" "tf2_msgs")
 set(tricycle_controller_BUILDTOOL_DEPENDS "ament_cmake")

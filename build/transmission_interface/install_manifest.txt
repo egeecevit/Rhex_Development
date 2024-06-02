@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/install/transmission_interface/lib/libtransmission_interface.so
+/home/dev-ros2/development/install/transmission_interface/lib/libtransmission_interface.so

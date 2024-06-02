@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "ign_ros2_control")
-set(ign_ros2_control_VERSION "0.7.7")
+set(ign_ros2_control_VERSION "0.7.8")
 set(ign_ros2_control_MAINTAINER "Alejandro Hernández <alejandro@openrobotics.com>")
 set(ign_ros2_control_BUILD_DEPENDS "ament_index_cpp" "ignition-gazebo6" "ignition-plugin" "pluginlib" "rclcpp" "yaml_cpp_vendor" "rclcpp_lifecycle" "hardware_interface" "controller_manager")
 set(ign_ros2_control_BUILDTOOL_DEPENDS "ament_cmake")

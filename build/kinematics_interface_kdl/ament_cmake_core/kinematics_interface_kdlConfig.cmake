@@ -16,7 +16,7 @@ set(_kinematics_interface_kdl_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT kinematics_interface_kdl_FIND_QUIETLY)
-  message(STATUS "Found kinematics_interface_kdl: 1.0.0 (${kinematics_interface_kdl_DIR})")
+  message(STATUS "Found kinematics_interface_kdl: 1.1.0 (${kinematics_interface_kdl_DIR})")
 endif()
 
 # warn when using a deprecated package

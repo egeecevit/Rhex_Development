@@ -1,2 +1,0 @@
-/home/ege/.local/lib/python3.10/site-packages/setuptools/package_index.py:288: UserWarning: Unbuilt egg for my-robot-controller 0.0.0 (/home/ege/ros2_ws/build/my_robot_controller)
-  Environment.__init__(self, *args, **kw)

@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "range_sensor_broadcaster")
-set(range_sensor_broadcaster_VERSION "2.34.0")
+set(range_sensor_broadcaster_VERSION "2.35.0")
 set(range_sensor_broadcaster_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>")
 set(range_sensor_broadcaster_BUILD_DEPENDS "backward_ros" "controller_interface" "generate_parameter_library" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_lifecycle" "realtime_tools" "sensor_msgs")
 set(range_sensor_broadcaster_BUILDTOOL_DEPENDS "ament_cmake")

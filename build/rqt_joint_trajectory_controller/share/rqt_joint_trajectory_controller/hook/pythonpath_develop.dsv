@@ -1,1 +1,1 @@
-prepend-non-duplicate;PYTHONPATH;/home/ege/ros2_ws/build/rqt_joint_trajectory_controller
+prepend-non-duplicate;PYTHONPATH;/home/dev-ros2/development/build/rqt_joint_trajectory_controller

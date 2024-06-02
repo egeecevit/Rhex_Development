@@ -1,8 +1,8 @@
-# Install script for directory: /home/ege/ros2_ws/build/controller_manager_msgs/controller_manager_msgs__py
+# Install script for directory: /home/dev-ros2/development/build/controller_manager_msgs/controller_manager_msgs__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ege/ros2_ws/install/controller_manager_msgs")
+  set(CMAKE_INSTALL_PREFIX "/home/dev-ros2/development/install/controller_manager_msgs")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

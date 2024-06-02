@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "forward_command_controller")
-set(forward_command_controller_VERSION "2.34.0")
+set(forward_command_controller_VERSION "2.35.0")
 set(forward_command_controller_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Jordan Palacios <jordan.palacios@pal-robotics.com>")
 set(forward_command_controller_BUILD_DEPENDS "backward_ros" "controller_interface" "generate_parameter_library" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_lifecycle" "realtime_tools" "std_msgs")
 set(forward_command_controller_BUILDTOOL_DEPENDS "ament_cmake")

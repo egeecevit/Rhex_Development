@@ -16,7 +16,7 @@ set(_imu_sensor_broadcaster_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT imu_sensor_broadcaster_FIND_QUIETLY)
-  message(STATUS "Found imu_sensor_broadcaster: 2.34.0 (${imu_sensor_broadcaster_DIR})")
+  message(STATUS "Found imu_sensor_broadcaster: 2.35.0 (${imu_sensor_broadcaster_DIR})")
 endif()
 
 # warn when using a deprecated package

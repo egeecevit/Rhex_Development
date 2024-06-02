@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "steering_controllers_library")
-set(steering_controllers_library_VERSION "2.34.0")
+set(steering_controllers_library_VERSION "2.35.0")
 set(steering_controllers_library_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Dr.-Ing. Denis Štogl <denis.stogl@stoglrobotics.de>")
 set(steering_controllers_library_BUILD_DEPENDS "generate_parameter_library" "backward_ros" "control_msgs" "controller_interface" "geometry_msgs" "hardware_interface" "nav_msgs" "pluginlib" "rclcpp" "rclcpp_lifecycle" "realtime_tools" "rcpputils" "std_srvs" "tf2" "tf2_msgs" "tf2_geometry_msgs" "ackermann_msgs")
 set(steering_controllers_library_BUILDTOOL_DEPENDS "ament_cmake")

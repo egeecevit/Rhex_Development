@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/src/rhex_description/launch/display_rhex.launch.py
+/home/dev-ros2/development/src/rhex_description/launch/display_rhex.launch.py

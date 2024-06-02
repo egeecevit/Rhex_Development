@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "position_controllers")
-set(position_controllers_VERSION "2.34.0")
+set(position_controllers_VERSION "2.35.0")
 set(position_controllers_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Jordan Palacios <jordan.palacios@pal-robotics.com>")
 set(position_controllers_BUILD_DEPENDS "backward_ros" "forward_command_controller" "pluginlib" "rclcpp")
 set(position_controllers_BUILDTOOL_DEPENDS "ament_cmake")

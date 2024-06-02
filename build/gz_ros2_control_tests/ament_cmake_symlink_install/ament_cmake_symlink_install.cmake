@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/gz_ros2_control_tests/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/gz_ros2_control_tests/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/gz_ros2_control_tests/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/gz_ros2_control_tests/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/gz_ros2_control_tests/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/gz_ros2_control_tests/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/ege/ros2_ws/install/gz_ros2_control_tests/${destination}")
+      set(destination "/home/dev-ros2/development/install/gz_ros2_control_tests/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -311,49 +311,49 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install("TARGETS" "test_position" "DESTINATION" "lib/gz_ros2_control_tests")
-include("/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "urdf" "config" "DESTINATION" "share/gz_ros2_control_tests/")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" DIRECTORY "urdf" "config" "DESTINATION" "share/gz_ros2_control_tests/")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" DIRECTORY "urdf" "config" "DESTINATION" "share/gz_ros2_control_tests/")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/gz_ros2_control_tests/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/gz_ros2_control_tests/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/gz_ros2_control_tests/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/gz_ros2_control_tests/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/gz_ros2_control_tests/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/gz_ros2_control_tests/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/gz_ros2_control_tests/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/gz_ros2_control_tests")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/gz_ros2_control_tests")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/gz_ros2_control_tests")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/gz_ros2_control_tests")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/gz_ros2_control_tests")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/gz_ros2_control_tests")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/gz_ros2_control_tests")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/gz_ros2_control_tests")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/gz_ros2_control_tests")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/gz_ros2_control_tests")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/gz_ros2_control_tests")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/gz_ros2_control_tests")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/gz_ros2_control_tests")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/gz_ros2_control_tests")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/gz_ros2_control_tests")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/gz_ros2_control_tests")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/gz_ros2_control_tests")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/gz_ros2_control_tests")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/gz_ros2_control_tests")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/gz_ros2_control_tests")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/packages/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/packages/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/packages/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_index/share/ament_index/resource_index/packages/gz_ros2_control_tests" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig.cmake" "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig-version.cmake" "DESTINATION" "share/gz_ros2_control_tests/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig.cmake" "/home/ege/ros2_ws/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig-version.cmake" "DESTINATION" "share/gz_ros2_control_tests/cmake")
+# install(FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig.cmake" "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig-version.cmake" "DESTINATION" "share/gz_ros2_control_tests/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig.cmake" "/home/dev-ros2/development/build/gz_ros2_control_tests/ament_cmake_core/gz_ros2_control_testsConfig-version.cmake" "DESTINATION" "share/gz_ros2_control_tests/cmake")
 
-# install(FILES "/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests/package.xml" "DESTINATION" "share/gz_ros2_control_tests")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/gz_ros2_control_tests/package.xml" "DESTINATION" "share/gz_ros2_control_tests")
+# install(FILES "/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests/package.xml" "DESTINATION" "share/gz_ros2_control_tests")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests" FILES "/home/dev-ros2/development/src/ros-controls/gz_ros2_control/gz_ros2_control_tests/package.xml" "DESTINATION" "share/gz_ros2_control_tests")

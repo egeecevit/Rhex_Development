@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/position_controllers/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/position_controllers/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/position_controllers/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/position_controllers/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/position_controllers/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/position_controllers/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/ege/ros2_ws/install/position_controllers/${destination}")
+      set(destination "/home/dev-ros2/development/install/position_controllers/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -311,64 +311,64 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(FILES "position_controllers_plugins.xml" "DESTINATION" "share/position_controllers/")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "position_controllers_plugins.xml" "DESTINATION" "share/position_controllers/")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "position_controllers_plugins.xml" "DESTINATION" "share/position_controllers/")
 
 # install(DIRECTORY "include/" "DESTINATION" "include/position_controllers")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" DIRECTORY "include/" "DESTINATION" "include/position_controllers")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" DIRECTORY "include/" "DESTINATION" "include/position_controllers")
 
 # install(FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/position_controllers/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/position_controllers/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/position_controllers/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/position_controllers/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/position_controllers/environment")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/position_controllers/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/position_controllers/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/position_controllers" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/position_controllers" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/position_controllers" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/position_controllers" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/position_controllers" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/position_controllers" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/position_controllers" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/position_controllers" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/position_controllers/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/position_controllers/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/position_controllers/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/position_controllers/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/position_controllers/environment")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/position_controllers/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/position_controllers/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/position_controllers/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/position_controllers/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/position_controllers/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/position_controllers/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/position_controllers/environment")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/position_controllers/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/position_controllers/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/position_controllers")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/position_controllers")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/position_controllers")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/position_controllers")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/position_controllers")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/position_controllers")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/position_controllers")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/position_controllers")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/position_controllers")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/position_controllers")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/position_controllers")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/position_controllers")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/position_controllers")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/position_controllers")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/position_controllers")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/position_controllers")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/position_controllers")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/position_controllers")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/position_controllers")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/position_controllers")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/packages/position_controllers" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/packages/position_controllers" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/packages/position_controllers" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/packages/position_controllers" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/controller_interface__pluginlib__plugin/position_controllers" "DESTINATION" "share/ament_index/resource_index/controller_interface__pluginlib__plugin")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/controller_interface__pluginlib__plugin/position_controllers" "DESTINATION" "share/ament_index/resource_index/controller_interface__pluginlib__plugin")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/controller_interface__pluginlib__plugin/position_controllers" "DESTINATION" "share/ament_index/resource_index/controller_interface__pluginlib__plugin")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_index/share/ament_index/resource_index/controller_interface__pluginlib__plugin/position_controllers" "DESTINATION" "share/ament_index/resource_index/controller_interface__pluginlib__plugin")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/position_controllers/cmake")
 
-# install(FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_core/position_controllersConfig.cmake" "/home/ege/ros2_ws/build/position_controllers/ament_cmake_core/position_controllersConfig-version.cmake" "DESTINATION" "share/position_controllers/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/build/position_controllers/ament_cmake_core/position_controllersConfig.cmake" "/home/ege/ros2_ws/build/position_controllers/ament_cmake_core/position_controllersConfig-version.cmake" "DESTINATION" "share/position_controllers/cmake")
+# install(FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_core/position_controllersConfig.cmake" "/home/dev-ros2/development/build/position_controllers/ament_cmake_core/position_controllersConfig-version.cmake" "DESTINATION" "share/position_controllers/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/build/position_controllers/ament_cmake_core/position_controllersConfig.cmake" "/home/dev-ros2/development/build/position_controllers/ament_cmake_core/position_controllersConfig-version.cmake" "DESTINATION" "share/position_controllers/cmake")
 
-# install(FILES "/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers/package.xml" "DESTINATION" "share/position_controllers")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/ege/ros2_ws/src/ros-controls/ros2_controllers/position_controllers/package.xml" "DESTINATION" "share/position_controllers")
+# install(FILES "/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers/package.xml" "DESTINATION" "share/position_controllers")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers" FILES "/home/dev-ros2/development/src/ros-controls/ros2_controllers/position_controllers/package.xml" "DESTINATION" "share/position_controllers")

@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/joint_limits/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/joint_limits/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/joint_limits/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/joint_limits/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/joint_limits/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/joint_limits/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/ege/ros2_ws/install/joint_limits/${destination}")
+      set(destination "/home/dev-ros2/development/install/joint_limits/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -311,58 +311,58 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "include/" "DESTINATION" "include")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" DIRECTORY "include/" "DESTINATION" "include")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" DIRECTORY "include/" "DESTINATION" "include")
 
 # install("TARGETS" "joint_limits_rosparam_test" "DESTINATION" "lib/joint_limits")
-include("/home/ege/ros2_ws/build/joint_limits/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/dev-ros2/development/build/joint_limits/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "test/joint_limits_rosparam.yaml" "DESTINATION" "share/joint_limits/test")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "test/joint_limits_rosparam.yaml" "DESTINATION" "share/joint_limits/test")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "test/joint_limits_rosparam.yaml" "DESTINATION" "share/joint_limits/test")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/joint_limits" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/joint_limits" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/joint_limits" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/joint_limits" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/joint_limits" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/joint_limits" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/joint_limits" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/joint_limits" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/joint_limits/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/joint_limits/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/joint_limits/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/joint_limits/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/joint_limits/environment")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/joint_limits/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/joint_limits/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/joint_limits/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/joint_limits/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/joint_limits/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/joint_limits/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/joint_limits/environment")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/joint_limits/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/joint_limits/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/joint_limits")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/joint_limits")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/joint_limits")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/joint_limits")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/joint_limits")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/joint_limits")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/joint_limits")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/joint_limits")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/joint_limits")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/joint_limits")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/joint_limits")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/joint_limits")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/joint_limits")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/joint_limits")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/joint_limits")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/joint_limits")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/joint_limits")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/joint_limits")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/joint_limits")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/joint_limits")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/packages/joint_limits" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/packages/joint_limits" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/packages/joint_limits" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_index/share/ament_index/resource_index/packages/joint_limits" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/joint_limits/cmake")
 
-# install(FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_core/joint_limitsConfig.cmake" "/home/ege/ros2_ws/build/joint_limits/ament_cmake_core/joint_limitsConfig-version.cmake" "DESTINATION" "share/joint_limits/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/build/joint_limits/ament_cmake_core/joint_limitsConfig.cmake" "/home/ege/ros2_ws/build/joint_limits/ament_cmake_core/joint_limitsConfig-version.cmake" "DESTINATION" "share/joint_limits/cmake")
+# install(FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_core/joint_limitsConfig.cmake" "/home/dev-ros2/development/build/joint_limits/ament_cmake_core/joint_limitsConfig-version.cmake" "DESTINATION" "share/joint_limits/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/build/joint_limits/ament_cmake_core/joint_limitsConfig.cmake" "/home/dev-ros2/development/build/joint_limits/ament_cmake_core/joint_limitsConfig-version.cmake" "DESTINATION" "share/joint_limits/cmake")
 
-# install(FILES "/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits/package.xml" "DESTINATION" "share/joint_limits")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits" FILES "/home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits/package.xml" "DESTINATION" "share/joint_limits")
+# install(FILES "/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits/package.xml" "DESTINATION" "share/joint_limits")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits" FILES "/home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits/package.xml" "DESTINATION" "share/joint_limits")

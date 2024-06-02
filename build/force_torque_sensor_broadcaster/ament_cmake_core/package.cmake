@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "force_torque_sensor_broadcaster")
-set(force_torque_sensor_broadcaster_VERSION "2.34.0")
+set(force_torque_sensor_broadcaster_VERSION "2.35.0")
 set(force_torque_sensor_broadcaster_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Denis Štogl <denis@stogl.de>, Subhas Das <subhas.robotics@gmail.com>")
 set(force_torque_sensor_broadcaster_BUILD_DEPENDS "backward_ros" "controller_interface" "geometry_msgs" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_lifecycle" "realtime_tools" "generate_parameter_library")
 set(force_torque_sensor_broadcaster_BUILDTOOL_DEPENDS "ament_cmake")

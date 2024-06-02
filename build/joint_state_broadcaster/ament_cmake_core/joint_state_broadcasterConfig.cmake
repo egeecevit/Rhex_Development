@@ -16,7 +16,7 @@ set(_joint_state_broadcaster_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT joint_state_broadcaster_FIND_QUIETLY)
-  message(STATUS "Found joint_state_broadcaster: 2.34.0 (${joint_state_broadcaster_DIR})")
+  message(STATUS "Found joint_state_broadcaster: 2.35.0 (${joint_state_broadcaster_DIR})")
 endif()
 
 # warn when using a deprecated package

@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ros2_control/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ros2_control/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ros2_control/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ros2_control/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ros2_control/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ros2_control/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/ege/ros2_ws/install/ros2_control/${destination}")
+      set(destination "/home/dev-ros2/development/install/ros2_control/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -310,44 +310,44 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ros2_control" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ros2_control" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ros2_control/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ros2_control/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ros2_control/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control/environment")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ros2_control/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ros2_control/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ros2_control/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ros2_control/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control/environment")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ros2_control/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ros2_control")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ros2_control")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ros2_control")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ros2_control")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ros2_control")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_index/share/ament_index/resource_index/packages/ros2_control" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_core/ros2_controlConfig.cmake" "/home/ege/ros2_ws/build/ros2_control/ament_cmake_core/ros2_controlConfig-version.cmake" "DESTINATION" "share/ros2_control/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/build/ros2_control/ament_cmake_core/ros2_controlConfig.cmake" "/home/ege/ros2_ws/build/ros2_control/ament_cmake_core/ros2_controlConfig-version.cmake" "DESTINATION" "share/ros2_control/cmake")
+# install(FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_core/ros2_controlConfig.cmake" "/home/dev-ros2/development/build/ros2_control/ament_cmake_core/ros2_controlConfig-version.cmake" "DESTINATION" "share/ros2_control/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/build/ros2_control/ament_cmake_core/ros2_controlConfig.cmake" "/home/dev-ros2/development/build/ros2_control/ament_cmake_core/ros2_controlConfig-version.cmake" "DESTINATION" "share/ros2_control/cmake")
 
-# install(FILES "/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control/package.xml" "DESTINATION" "share/ros2_control")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control" FILES "/home/ege/ros2_ws/src/ros-controls/ros2_control/ros2_control/package.xml" "DESTINATION" "share/ros2_control")
+# install(FILES "/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control/package.xml" "DESTINATION" "share/ros2_control")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control" FILES "/home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control/package.xml" "DESTINATION" "share/ros2_control")

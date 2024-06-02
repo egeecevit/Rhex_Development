@@ -1,8 +1,8 @@
-# Install script for directory: /home/ege/ros2_ws/src/ros-controls/ros2_controllers/ros2_controllers
+# Install script for directory: /home/dev-ros2/development/src/ros-controls/ros2_controllers/ros2_controllers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ege/ros2_ws/install/ros2_controllers")
+  set(CMAKE_INSTALL_PREFIX "/home/dev-ros2/development/install/ros2_controllers")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -37,8 +37,8 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ege/ros2_ws/build/ros2_controllers/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/dev-ros2/development/build/ros2_controllers/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -49,5 +49,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ege/ros2_ws/build/ros2_controllers/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dev-ros2/development/build/ros2_controllers/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

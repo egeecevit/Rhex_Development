@@ -255,14 +255,26 @@ template <typename T, size_t capacity>
 
       for (const auto &param: parameters) {
         if (param.get_name() == (prefix_ + "left_wheel_names")) {
+            if(auto validation_result = not_empty<std::string>(param);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
             updated_params.left_wheel_names = param.as_string_array();
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
         if (param.get_name() == (prefix_ + "right_wheel_names")) {
+            if(auto validation_result = not_empty<std::string>(param);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
             updated_params.right_wheel_names = param.as_string_array();
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
         if (param.get_name() == (prefix_ + "wheel_separation")) {
+            if(auto validation_result = gt<double>(param, 0.0);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
             updated_params.wheel_separation = param.as_double();
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
@@ -271,6 +283,10 @@ template <typename T, size_t capacity>
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
         if (param.get_name() == (prefix_ + "wheel_radius")) {
+            if(auto validation_result = gt<double>(param, 0.0);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
             updated_params.wheel_radius = param.as_double();
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
@@ -426,14 +442,14 @@ template <typename T, size_t capacity>
       // declare all parameters and give default values to non-required ones
       if (!parameters_interface_->has_parameter(prefix_ + "left_wheel_names")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
-          descriptor.description = "Link names of the left side wheels";
+          descriptor.description = "Names of the left side wheels' joints";
           descriptor.read_only = false;
           auto parameter = to_parameter_value(updated_params.left_wheel_names);
           parameters_interface_->declare_parameter(prefix_ + "left_wheel_names", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "right_wheel_names")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
-          descriptor.description = "Link names of the right side wheels";
+          descriptor.description = "Names of the right side wheels' joints";
           descriptor.read_only = false;
           auto parameter = to_parameter_value(updated_params.right_wheel_names);
           parameters_interface_->declare_parameter(prefix_ + "right_wheel_names", parameter, descriptor);
@@ -442,6 +458,9 @@ template <typename T, size_t capacity>
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Shortest distance between the left and right wheels. If this parameter is wrong, the robot will not behave correctly in curves.";
           descriptor.read_only = false;
+          descriptor.floating_point_range.resize(1);
+          descriptor.floating_point_range.at(0).from_value = 0.0;
+          descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
           auto parameter = to_parameter_value(updated_params.wheel_separation);
           parameters_interface_->declare_parameter(prefix_ + "wheel_separation", parameter, descriptor);
       }
@@ -456,6 +475,9 @@ template <typename T, size_t capacity>
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Radius of a wheel, i.e., wheels size, used for transformation of linear velocity into wheel rotations. If this parameter is wrong the robot will move faster or slower then expected.";
           descriptor.read_only = false;
+          descriptor.floating_point_range.resize(1);
+          descriptor.floating_point_range.at(0).from_value = 0.0;
+          descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
           auto parameter = to_parameter_value(updated_params.wheel_radius);
           parameters_interface_->declare_parameter(prefix_ + "wheel_radius", parameter, descriptor);
       }
@@ -708,18 +730,34 @@ template <typename T, size_t capacity>
       rclcpp::Parameter param;
       param = parameters_interface_->get_parameter(prefix_ + "left_wheel_names");
       RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = not_empty<std::string>(param);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'left_wheel_names': {}", validation_result.error()));
+      }
       updated_params.left_wheel_names = param.as_string_array();
       param = parameters_interface_->get_parameter(prefix_ + "right_wheel_names");
       RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = not_empty<std::string>(param);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'right_wheel_names': {}", validation_result.error()));
+      }
       updated_params.right_wheel_names = param.as_string_array();
       param = parameters_interface_->get_parameter(prefix_ + "wheel_separation");
       RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = gt<double>(param, 0.0);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'wheel_separation': {}", validation_result.error()));
+      }
       updated_params.wheel_separation = param.as_double();
       param = parameters_interface_->get_parameter(prefix_ + "wheels_per_side");
       RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
       updated_params.wheels_per_side = param.as_int();
       param = parameters_interface_->get_parameter(prefix_ + "wheel_radius");
       RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = gt<double>(param, 0.0);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'wheel_radius': {}", validation_result.error()));
+      }
       updated_params.wheel_radius = param.as_double();
       param = parameters_interface_->get_parameter(prefix_ + "wheel_separation_multiplier");
       RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());

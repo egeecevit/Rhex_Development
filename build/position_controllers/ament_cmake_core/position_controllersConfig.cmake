@@ -16,7 +16,7 @@ set(_position_controllers_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT position_controllers_FIND_QUIETLY)
-  message(STATUS "Found position_controllers: 2.34.0 (${position_controllers_DIR})")
+  message(STATUS "Found position_controllers: 2.35.0 (${position_controllers_DIR})")
 endif()
 
 # warn when using a deprecated package

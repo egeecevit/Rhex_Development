@@ -16,7 +16,7 @@ set(_forward_command_controller_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT forward_command_controller_FIND_QUIETLY)
-  message(STATUS "Found forward_command_controller: 2.34.0 (${forward_command_controller_DIR})")
+  message(STATUS "Found forward_command_controller: 2.35.0 (${forward_command_controller_DIR})")
 endif()
 
 # warn when using a deprecated package

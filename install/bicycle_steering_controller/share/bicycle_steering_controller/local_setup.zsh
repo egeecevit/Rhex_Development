@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/build/bicycle_steering_controller/ament_cmake_environment_hooks/local_setup.zsh
+/home/dev-ros2/development/build/bicycle_steering_controller/ament_cmake_environment_hooks/local_setup.zsh

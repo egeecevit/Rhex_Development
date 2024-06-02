@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "joint_trajectory_controller")
-set(joint_trajectory_controller_VERSION "2.34.0")
+set(joint_trajectory_controller_VERSION "2.35.0")
 set(joint_trajectory_controller_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Dr. Denis Štogl <denis.stogl@stoglrobotics.de>, Christoph Froehlich <christoph.froehlich@ait.ac.at>")
 set(joint_trajectory_controller_BUILD_DEPENDS "angles" "backward_ros" "controller_interface" "control_msgs" "control_toolbox" "generate_parameter_library" "hardware_interface" "pluginlib" "rclcpp" "rclcpp_lifecycle" "realtime_tools" "rsl" "tl_expected" "trajectory_msgs")
 set(joint_trajectory_controller_BUILDTOOL_DEPENDS "ament_cmake")

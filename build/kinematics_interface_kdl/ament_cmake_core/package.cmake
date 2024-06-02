@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "kinematics_interface_kdl")
-set(kinematics_interface_kdl_VERSION "1.0.0")
+set(kinematics_interface_kdl_VERSION "1.1.0")
 set(kinematics_interface_kdl_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Denis Štogl <denis@stogl.de>, Paul Gesel <paul.gesel@picknik.ai>")
 set(kinematics_interface_kdl_BUILD_DEPENDS "eigen" "kdl_parser" "kinematics_interface" "pluginlib" "tf2_eigen_kdl")
 set(kinematics_interface_kdl_BUILDTOOL_DEPENDS "ament_cmake" "eigen3_cmake_module")

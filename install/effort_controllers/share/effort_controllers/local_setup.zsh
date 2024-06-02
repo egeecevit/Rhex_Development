@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/build/effort_controllers/ament_cmake_environment_hooks/local_setup.zsh
+/home/dev-ros2/development/build/effort_controllers/ament_cmake_environment_hooks/local_setup.zsh

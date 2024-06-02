@@ -1,8 +1,8 @@
-# Install script for directory: /home/ege/ros2_ws/src/ros-controls/ros2_control/hardware_interface_testing
+# Install script for directory: /home/dev-ros2/development/src/ros-controls/ros2_control/hardware_interface_testing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ege/ros2_ws/install/hardware_interface_testing")
+  set(CMAKE_INSTALL_PREFIX "/home/dev-ros2/development/install/hardware_interface_testing")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -42,18 +42,18 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ege/ros2_ws/build/hardware_interface_testing/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/dev-ros2/development/build/hardware_interface_testing/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ege/ros2_ws/build/hardware_interface_testing/gmock/cmake_install.cmake")
+  include("/home/dev-ros2/development/build/hardware_interface_testing/gmock/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ege/ros2_ws/build/hardware_interface_testing/gtest/cmake_install.cmake")
+  include("/home/dev-ros2/development/build/hardware_interface_testing/gtest/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -64,5 +64,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ege/ros2_ws/build/hardware_interface_testing/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dev-ros2/development/build/hardware_interface_testing/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

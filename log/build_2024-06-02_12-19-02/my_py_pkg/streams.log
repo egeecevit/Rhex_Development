@@ -1,0 +1,19 @@
+[1.309s] Invoking command in '/home/dev-ros2/development/build/my_py_pkg': PYTHONPATH=/home/dev-ros2/development/build/my_py_pkg/prefix_override:/home/dev-ros2/development/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/my_py_pkg/build --no-deps symlink_data
+[1.537s] running develop
+[1.644s] running egg_info
+[1.644s] writing my_py_pkg.egg-info/PKG-INFO
+[1.645s] writing dependency_links to my_py_pkg.egg-info/dependency_links.txt
+[1.645s] writing entry points to my_py_pkg.egg-info/entry_points.txt
+[1.645s] writing requirements to my_py_pkg.egg-info/requires.txt
+[1.645s] writing top-level names to my_py_pkg.egg-info/top_level.txt
+[1.646s] reading manifest file 'my_py_pkg.egg-info/SOURCES.txt'
+[1.647s] writing manifest file 'my_py_pkg.egg-info/SOURCES.txt'
+[1.647s] running build_ext
+[1.647s] Creating /home/dev-ros2/development/install/my_py_pkg/lib/python3.10/site-packages/my-py-pkg.egg-link (link to .)
+[1.648s] Installing py_node script to /home/dev-ros2/development/install/my_py_pkg/lib/my_py_pkg
+[1.648s] Installing robot_news_station script to /home/dev-ros2/development/install/my_py_pkg/lib/my_py_pkg
+[1.648s] Installing smartphone script to /home/dev-ros2/development/install/my_py_pkg/lib/my_py_pkg
+[1.648s] 
+[1.648s] Installed /home/dev-ros2/development/build/my_py_pkg
+[1.648s] running symlink_data
+[1.672s] Invoked command in '/home/dev-ros2/development/build/my_py_pkg' returned '0': PYTHONPATH=/home/dev-ros2/development/build/my_py_pkg/prefix_override:/home/dev-ros2/development/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/my_py_pkg/build --no-deps symlink_data

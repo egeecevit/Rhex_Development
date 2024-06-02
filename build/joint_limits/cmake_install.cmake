@@ -1,8 +1,8 @@
-# Install script for directory: /home/ege/ros2_ws/src/ros-controls/ros2_control/joint_limits
+# Install script for directory: /home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ege/ros2_ws/install/joint_limits")
+  set(CMAKE_INSTALL_PREFIX "/home/dev-ros2/development/install/joint_limits")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -42,13 +42,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ege/ros2_ws/build/joint_limits/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/dev-ros2/development/build/joint_limits/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ege/ros2_ws/build/joint_limits/gtest/cmake_install.cmake")
+  include("/home/dev-ros2/development/build/joint_limits/gtest/cmake_install.cmake")
 
 endif()
 
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ege/ros2_ws/build/joint_limits/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dev-ros2/development/build/joint_limits/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

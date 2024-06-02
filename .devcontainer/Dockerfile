@@ -18,6 +18,18 @@ RUN apt-get update -y && \
         sudo \
         git \
         wget \
+        autoconf \
+        libargon2-dev \
+        libssl-dev \
+        libx11-dev \
+        cmake \
+        libgstreamer1.0-dev \
+        libgstreamer-plugins-base1.0-dev \
+        libgstreamer-plugins-bad1.0-dev \
+        libxext-dev \
+        flex \
+        bison \
+        gstreamer1.0-pulseaudio \
         python3 \
         python3-dev \
         python3-pip
@@ -51,6 +63,15 @@ RUN groupadd --gid $USER_GID $USERNAME && \
 
 # Set the default user to the newly created user
 USER $USERNAME
+
+COPY robot_x64/ /home/${USERNAME}/robot/
+
+#Add this line if there exist some authorization issues
+#RUN chown -R $USERNAME:$USERNAME /home/${USERNAME}/robot
+
+ENV ROBOMETU_LINUX_DIR=/home/${USERNAME}/robot/RoboMETU.linux
+ENV TRHEX_LINUX_DIR=/home/${USERNAME}/robot/TRHex.linux
+ENV RHEX_API_DIR=/home/${USERNAME}/robot/rhex-api
 
 
 

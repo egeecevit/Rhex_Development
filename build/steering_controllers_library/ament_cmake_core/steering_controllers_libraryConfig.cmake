@@ -16,7 +16,7 @@ set(_steering_controllers_library_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT steering_controllers_library_FIND_QUIETLY)
-  message(STATUS "Found steering_controllers_library: 2.34.0 (${steering_controllers_library_DIR})")
+  message(STATUS "Found steering_controllers_library: 2.35.0 (${steering_controllers_library_DIR})")
 endif()
 
 # warn when using a deprecated package

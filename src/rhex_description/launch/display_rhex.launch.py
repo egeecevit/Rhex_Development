@@ -10,7 +10,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
     urdf_path = os.path.join(get_package_share_path('rhex_description'),'urdf','robot.urdf.xacro')
-    control_path = os.path.join(get_package_share_path('rhex_description'), 'config', 'rhex_ros_control.yaml')
+
     world = os.path.join(get_package_share_path('rhex_description'),'world', 'rhex_world.world')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
@@ -31,7 +31,7 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         #name="robot_state_publisher",
-        #output="screen",
+        output="screen",
         #namespace="/rhex", for namespacing
         parameters=[
             {"robot_description": robot_description,
@@ -39,11 +39,6 @@ def generate_launch_description():
         ]
     )
 
-    joint_state_publisher_gui_node = Node(
-        package="joint_state_publisher_gui",
-        executable="joint_state_publisher_gui",
-        #namespace="/rhex" for namespacing
-    )
 
     load_joint_state_controller = ExecuteProcess(
         cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
@@ -88,10 +83,26 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
     )
 
-    controller_Node = Node(
-        package='controller_manager',
-        executable='ros2_control_node',
-        namespace='rhex'
+    controller_node = Node(
+        package="control_server",
+        executable="controller_server_network.py",
+        output="screen",
+        parameters=[
+            {"host": LaunchConfiguration("host")},
+            {"port": LaunchConfiguration("port")}
+        ]
+    )
+
+    declare_host = DeclareLaunchArgument(
+        name="host",
+        default_value="127.0.0.1",
+        description='Host address of the socket'
+    )
+
+    declare_port = DeclareLaunchArgument(
+        "port",
+        default_value="1256",
+        description='Port of the socket'
     )
 
     joint_state_publisher_node = Node(
@@ -104,6 +115,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         declare_use_sim_time,
+        declare_host,
+        declare_port,
         DeclareLaunchArgument(
             'lidar_enabled',
             default_value='false',
@@ -115,6 +128,6 @@ def generate_launch_description():
         spawn_entity,
         load_effort_controller,
         load_joint_state_controller,
-        #joint_state_publisher_gui_node
-        joint_state_publisher_node
+        controller_node,
+        #joint_state_publisher_node
     ])

@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/build/tricycle_steering_controller/ament_cmake_environment_hooks/local_setup.bash
+/home/dev-ros2/development/build/tricycle_steering_controller/ament_cmake_environment_hooks/local_setup.bash

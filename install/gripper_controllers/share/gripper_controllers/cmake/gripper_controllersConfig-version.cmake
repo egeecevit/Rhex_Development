@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/build/gripper_controllers/ament_cmake_core/gripper_controllersConfig-version.cmake
+/home/dev-ros2/development/build/gripper_controllers/ament_cmake_core/gripper_controllersConfig-version.cmake

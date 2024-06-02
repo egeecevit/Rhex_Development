@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/src/ros-controls/ros2_control_demos/example_6/description/launch/view_robot.launch.py
+/home/dev-ros2/development/src/ros-controls/ros2_control_demos/example_6/description/launch/view_robot.launch.py

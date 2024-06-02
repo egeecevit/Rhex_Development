@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "ros2_controllers")
-set(ros2_controllers_VERSION "2.34.0")
+set(ros2_controllers_VERSION "2.35.0")
 set(ros2_controllers_MAINTAINER "Bence Magyar <bence.magyar.robotics@gmail.com>, Jordan Palacios <jordan.palacios@pal-robotics.com>")
 set(ros2_controllers_BUILD_DEPENDS )
 set(ros2_controllers_BUILDTOOL_DEPENDS "ament_cmake")

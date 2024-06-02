@@ -16,7 +16,7 @@ set(_gz_ros2_control_tests_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT gz_ros2_control_tests_FIND_QUIETLY)
-  message(STATUS "Found gz_ros2_control_tests: 0.7.7 (${gz_ros2_control_tests_DIR})")
+  message(STATUS "Found gz_ros2_control_tests: 0.7.8 (${gz_ros2_control_tests_DIR})")
 endif()
 
 # warn when using a deprecated package

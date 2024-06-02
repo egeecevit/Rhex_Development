@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.bash
+/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.bash

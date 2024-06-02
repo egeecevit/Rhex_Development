@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ign_ros2_control_demos/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ign_ros2_control_demos/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ign_ros2_control_demos/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ign_ros2_control_demos/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/ege/ros2_ws/install/ign_ros2_control_demos/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/dev-ros2/development/install/ign_ros2_control_demos/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/ege/ros2_ws/install/ign_ros2_control_demos/${destination}")
+      set(destination "/home/dev-ros2/development/install/ign_ros2_control_demos/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
+    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -311,49 +311,49 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "launch" "config" "urdf" "DESTINATION" "share/ign_ros2_control_demos/")
-ament_cmake_symlink_install_directory("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" DIRECTORY "launch" "config" "urdf" "DESTINATION" "share/ign_ros2_control_demos/")
+ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" DIRECTORY "launch" "config" "urdf" "DESTINATION" "share/ign_ros2_control_demos/")
 
 # install("TARGETS" "example_position" "example_velocity" "example_effort" "example_diff_drive" "example_tricycle_drive" "example_gripper" "DESTINATION" "lib/ign_ros2_control_demos")
-include("/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ign_ros2_control_demos/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ign_ros2_control_demos/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/ign_ros2_control_demos/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ign_ros2_control_demos/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ign_ros2_control_demos/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/ign_ros2_control_demos/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/ign_ros2_control_demos/environment")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ign_ros2_control_demos")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ign_ros2_control_demos")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ign_ros2_control_demos")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/ign_ros2_control_demos")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ign_ros2_control_demos")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ign_ros2_control_demos")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ign_ros2_control_demos")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/ign_ros2_control_demos")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ign_ros2_control_demos")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ign_ros2_control_demos")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ign_ros2_control_demos")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/ign_ros2_control_demos")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ign_ros2_control_demos")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ign_ros2_control_demos")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ign_ros2_control_demos")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/ign_ros2_control_demos")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ign_ros2_control_demos")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ign_ros2_control_demos")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ign_ros2_control_demos")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/ign_ros2_control_demos")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/packages/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/packages/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/packages/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_index/share/ament_index/resource_index/packages/ign_ros2_control_demos" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig.cmake" "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig-version.cmake" "DESTINATION" "share/ign_ros2_control_demos/cmake")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig.cmake" "/home/ege/ros2_ws/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig-version.cmake" "DESTINATION" "share/ign_ros2_control_demos/cmake")
+# install(FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig.cmake" "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig-version.cmake" "DESTINATION" "share/ign_ros2_control_demos/cmake")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig.cmake" "/home/dev-ros2/development/build/ign_ros2_control_demos/ament_cmake_core/ign_ros2_control_demosConfig-version.cmake" "DESTINATION" "share/ign_ros2_control_demos/cmake")
 
-# install(FILES "/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos/package.xml" "DESTINATION" "share/ign_ros2_control_demos")
-ament_cmake_symlink_install_files("/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/ege/ros2_ws/src/ros-controls/gz_ros2_control/ign_ros2_control_demos/package.xml" "DESTINATION" "share/ign_ros2_control_demos")
+# install(FILES "/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos/package.xml" "DESTINATION" "share/ign_ros2_control_demos")
+ament_cmake_symlink_install_files("/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos" FILES "/home/dev-ros2/development/src/ros-controls/gz_ros2_control/ign_ros2_control_demos/package.xml" "DESTINATION" "share/ign_ros2_control_demos")

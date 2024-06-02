@@ -1,0 +1,18 @@
+[1.361s] Invoking command in '/home/dev-ros2/development/build/activity_2': PYTHONPATH=/home/dev-ros2/development/build/activity_2/prefix_override:/home/dev-ros2/development/install/activity_2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/activity_2/build --no-deps symlink_data
+[1.656s] running develop
+[1.743s] running egg_info
+[1.743s] writing activity_2.egg-info/PKG-INFO
+[1.743s] writing dependency_links to activity_2.egg-info/dependency_links.txt
+[1.743s] writing entry points to activity_2.egg-info/entry_points.txt
+[1.743s] writing requirements to activity_2.egg-info/requires.txt
+[1.743s] writing top-level names to activity_2.egg-info/top_level.txt
+[1.744s] reading manifest file 'activity_2.egg-info/SOURCES.txt'
+[1.744s] writing manifest file 'activity_2.egg-info/SOURCES.txt'
+[1.745s] running build_ext
+[1.746s] Creating /home/dev-ros2/development/install/activity_2/lib/python3.10/site-packages/activity-2.egg-link (link to .)
+[1.746s] Installing number_counter script to /home/dev-ros2/development/install/activity_2/lib/activity_2
+[1.746s] Installing number_publisher script to /home/dev-ros2/development/install/activity_2/lib/activity_2
+[1.746s] 
+[1.746s] Installed /home/dev-ros2/development/build/activity_2
+[1.746s] running symlink_data
+[1.768s] Invoked command in '/home/dev-ros2/development/build/activity_2' returned '0': PYTHONPATH=/home/dev-ros2/development/build/activity_2/prefix_override:/home/dev-ros2/development/install/activity_2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/activity_2/build --no-deps symlink_data

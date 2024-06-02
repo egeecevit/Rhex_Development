@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/src/activity_2/setup.py
+/home/dev-ros2/development/src/activity_2/setup.py

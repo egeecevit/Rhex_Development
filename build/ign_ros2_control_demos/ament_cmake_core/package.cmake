@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "ign_ros2_control_demos")
-set(ign_ros2_control_demos_VERSION "0.7.7")
+set(ign_ros2_control_demos_VERSION "0.7.8")
 set(ign_ros2_control_demos_MAINTAINER "Alejandro Hernandez <ahcorde@osrfoundation.org>")
 set(ign_ros2_control_demos_BUILD_DEPENDS "control_msgs" "geometry_msgs" "rclcpp" "rclcpp_action" "std_msgs")
 set(ign_ros2_control_demos_BUILDTOOL_DEPENDS "ament_cmake")

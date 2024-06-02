@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "kinematics_interface")
-set(kinematics_interface_VERSION "1.0.0")
+set(kinematics_interface_VERSION "1.1.0")
 set(kinematics_interface_MAINTAINER "Denis Štogl <denis@stogl.de>, Bence Magyar <bence.magyar.robotics@gmail.com>, Andy Zelenak <zelenak@picknik.ai>, Paul Gesel <paul.gesel@picknik.ai>")
 set(kinematics_interface_BUILD_DEPENDS "eigen" "rclcpp_lifecycle")
 set(kinematics_interface_BUILDTOOL_DEPENDS "ament_cmake")

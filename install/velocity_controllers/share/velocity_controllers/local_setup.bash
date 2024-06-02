@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/build/velocity_controllers/ament_cmake_environment_hooks/local_setup.bash
+/home/dev-ros2/development/build/velocity_controllers/ament_cmake_environment_hooks/local_setup.bash

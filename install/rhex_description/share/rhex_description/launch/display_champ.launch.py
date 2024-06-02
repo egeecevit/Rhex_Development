@@ -1,1 +1,1 @@
-/home/ege/ros2_ws/src/rhex_description/launch/display_champ.launch.py
+/home/dev-ros2/development/src/rhex_description/launch/display_champ.launch.py

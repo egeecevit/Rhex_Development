@@ -1,5 +1,5 @@
 set(_AMENT_PACKAGE_NAME "gz_ros2_control_tests")
-set(gz_ros2_control_tests_VERSION "0.7.7")
+set(gz_ros2_control_tests_VERSION "0.7.8")
 set(gz_ros2_control_tests_MAINTAINER "Alejandro Hernández <alejandro@openrobotics.org>")
 set(gz_ros2_control_tests_BUILD_DEPENDS "control_msgs" "rclcpp" "rclcpp_action")
 set(gz_ros2_control_tests_BUILDTOOL_DEPENDS "ament_cmake")
