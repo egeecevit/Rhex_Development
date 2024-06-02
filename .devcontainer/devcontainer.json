@@ -1,0 +1,36 @@
+{
+    "name": "ROS2 Troubleshooting Container",
+    "privileged": true,
+    "build":{
+        "dockerfile": "Dockerfile",
+        "context": "../.."
+    },
+    "workspaceFolder": "/home/dev-ros2/ros2_troubleshooting",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/dev-ros2/ros2_troubleshooting,type=bind,consistency=cached",
+    "containerEnv": {
+        "DISPLAY": "${env:DISPLAY}",
+        "NVIDIA_VISIBLE_DEVICES": "all",
+        "NVIDIA_DRIVER_CAPABILITIES": "all"
+    },
+    "runArgs": [
+        "--net=host",
+        "--ipc=host",
+        "--pid=host"
+    ],
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-python.python",
+                "GitHub.copilot",
+                "ms-iot.vscode-ros"
+            ]
+        }
+    },
+
+    "postCreateCommand": "echo 'Container ready!'"
+}
