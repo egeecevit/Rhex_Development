@@ -1,0 +1,65 @@
+[0.322s] Invoking command in '/home/dev-ros2/development/build/kinematics_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake /home/dev-ros2/development/src/ros-controls/kinematics_interface/kinematics_interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dev-ros2/development/install/kinematics_interface
+[1.232s] -- The CXX compiler identification is GNU 11.4.0
+[1.233s] -- Detecting CXX compiler ABI info
+[1.233s] -- Detecting CXX compiler ABI info - done
+[1.233s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.233s] -- Detecting CXX compile features
+[1.233s] -- Detecting CXX compile features - done
+[1.234s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.234s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.234s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.234s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[1.234s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.234s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.234s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.234s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.234s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.235s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.235s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.235s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.235s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.235s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.235s] -- Looking for C++ include pthread.h
+[1.313s] -- Looking for C++ include pthread.h - found
+[1.314s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.411s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.412s] -- Found Threads: TRUE  
+[1.590s] -- Found rclcpp_lifecycle: 16.0.8 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.748s] -- Configuring done
+[1.759s] -- Generating done
+[1.761s] -- Build files have been written to: /home/dev-ros2/development/build/kinematics_interface
+[1.772s] Invoked command in '/home/dev-ros2/development/build/kinematics_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake /home/dev-ros2/development/src/ros-controls/kinematics_interface/kinematics_interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dev-ros2/development/install/kinematics_interface
+[1.772s] Invoking command in '/home/dev-ros2/development/build/kinematics_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --build /home/dev-ros2/development/build/kinematics_interface -- -j16 -l16
+[2.110s] [ 50%] [32mBuilding CXX object CMakeFiles/kinematics_interface.dir/src/kinematics_interface.cpp.o[0m
+[4.678s] [100%] [32m[1mLinking CXX shared library libkinematics_interface.so[0m
+[4.862s] [100%] Built target kinematics_interface
+[4.901s] Invoked command in '/home/dev-ros2/development/build/kinematics_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --build /home/dev-ros2/development/build/kinematics_interface -- -j16 -l16
+[5.002s] Invoking command in '/home/dev-ros2/development/build/kinematics_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --install /home/dev-ros2/development/build/kinematics_interface
+[5.011s] -- Install configuration: ""
+[5.011s] -- Execute custom install script
+[5.012s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/include/kinematics_interface/kinematics_interface/kinematics_interface.hpp
+[5.022s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/include/kinematics_interface/kinematics_interface/visibility_control.h
+[5.033s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/environment/library_path.sh
+[5.043s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/environment/library_path.dsv
+[5.055s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/ament_index/resource_index/package_run_dependencies/kinematics_interface
+[5.067s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/ament_index/resource_index/parent_prefix_path/kinematics_interface
+[5.078s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/environment/ament_prefix_path.sh
+[5.089s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/environment/ament_prefix_path.dsv
+[5.100s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/environment/path.sh
+[5.112s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/environment/path.dsv
+[5.125s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/local_setup.bash
+[5.136s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/local_setup.sh
+[5.148s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/local_setup.zsh
+[5.159s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/local_setup.dsv
+[5.171s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/package.dsv
+[5.183s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/ament_index/resource_index/packages/kinematics_interface
+[5.195s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/cmake/ament_cmake_export_targets-extras.cmake
+[5.210s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.222s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/cmake/kinematics_interfaceConfig.cmake
+[5.233s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/cmake/kinematics_interfaceConfig-version.cmake
+[5.244s] -- Symlinking: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/package.xml
+[5.257s] -- Installing: /home/dev-ros2/development/install/kinematics_interface/lib/libkinematics_interface.so
+[5.257s] -- Set runtime path of "/home/dev-ros2/development/install/kinematics_interface/lib/libkinematics_interface.so" to ""
+[5.258s] -- Installing: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/cmake/export_kinematics_interfaceExport.cmake
+[5.258s] -- Installing: /home/dev-ros2/development/install/kinematics_interface/share/kinematics_interface/cmake/export_kinematics_interfaceExport-noconfig.cmake
+[5.260s] Invoked command in '/home/dev-ros2/development/build/kinematics_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --install /home/dev-ros2/development/build/kinematics_interface

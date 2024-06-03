@@ -1,5 +1,6 @@
 /home/dev-ros2/development/install/control_server/lib/control_server/controller_server_network.py
 /home/dev-ros2/development/install/control_server/share/control_server/launch/start_sim.launch.py
+/home/dev-ros2/development/install/control_server/share/control_server/src/__pycache__/miscellaneous.cpython-310.pyc
 /home/dev-ros2/development/install/control_server/share/control_server/src/controller_server_network.py
 /home/dev-ros2/development/install/control_server/share/control_server/src/miscellaneous.py
 /home/dev-ros2/development/install/control_server/share/ament_index/resource_index/package_run_dependencies/control_server

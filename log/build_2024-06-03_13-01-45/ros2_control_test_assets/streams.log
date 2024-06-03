@@ -1,0 +1,44 @@
+[0.065s] Invoking command in '/home/dev-ros2/development/build/ros2_control_test_assets': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake /home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control_test_assets -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dev-ros2/development/install/ros2_control_test_assets
+[1.243s] -- The C compiler identification is GNU 11.4.0
+[1.244s] -- The CXX compiler identification is GNU 11.4.0
+[1.244s] -- Detecting C compiler ABI info
+[1.245s] -- Detecting C compiler ABI info - done
+[1.245s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.245s] -- Detecting C compile features
+[1.245s] -- Detecting C compile features - done
+[1.245s] -- Detecting CXX compiler ABI info
+[1.245s] -- Detecting CXX compiler ABI info - done
+[1.245s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.245s] -- Detecting CXX compile features
+[1.245s] -- Detecting CXX compile features - done
+[1.245s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.246s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.246s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.246s] -- Configuring done
+[1.246s] -- Generating done
+[1.246s] -- Build files have been written to: /home/dev-ros2/development/build/ros2_control_test_assets
+[1.268s] Invoked command in '/home/dev-ros2/development/build/ros2_control_test_assets' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake /home/dev-ros2/development/src/ros-controls/ros2_control/ros2_control_test_assets -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dev-ros2/development/install/ros2_control_test_assets
+[1.269s] Invoking command in '/home/dev-ros2/development/build/ros2_control_test_assets': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --build /home/dev-ros2/development/build/ros2_control_test_assets -- -j16 -l16
+[1.301s] Invoked command in '/home/dev-ros2/development/build/ros2_control_test_assets' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --build /home/dev-ros2/development/build/ros2_control_test_assets -- -j16 -l16
+[1.358s] Invoking command in '/home/dev-ros2/development/build/ros2_control_test_assets': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --install /home/dev-ros2/development/build/ros2_control_test_assets
+[1.366s] -- Install configuration: ""
+[1.367s] -- Execute custom install script
+[1.367s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/include/ros2_control_test_assets/components_urdfs.hpp
+[1.377s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/include/ros2_control_test_assets/descriptions.hpp
+[1.386s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ament_index/resource_index/package_run_dependencies/ros2_control_test_assets
+[1.395s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ament_index/resource_index/parent_prefix_path/ros2_control_test_assets
+[1.408s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/environment/ament_prefix_path.sh
+[1.419s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/environment/ament_prefix_path.dsv
+[1.431s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/environment/path.sh
+[1.439s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/environment/path.dsv
+[1.448s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/local_setup.bash
+[1.457s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/local_setup.sh
+[1.470s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/local_setup.zsh
+[1.483s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/local_setup.dsv
+[1.493s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/package.dsv
+[1.505s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ament_index/resource_index/packages/ros2_control_test_assets
+[1.513s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.523s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/cmake/ros2_control_test_assetsConfig.cmake
+[1.533s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/cmake/ros2_control_test_assetsConfig-version.cmake
+[1.542s] -- Symlinking: /home/dev-ros2/development/install/ros2_control_test_assets/share/ros2_control_test_assets/package.xml
+[1.553s] Invoked command in '/home/dev-ros2/development/build/ros2_control_test_assets' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --install /home/dev-ros2/development/build/ros2_control_test_assets

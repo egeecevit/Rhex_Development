@@ -1,0 +1,83 @@
+[0.321s] Invoking command in '/home/dev-ros2/development/build/joint_limits': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake /home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dev-ros2/development/install/joint_limits
+[1.234s] -- The C compiler identification is GNU 11.4.0
+[1.234s] -- The CXX compiler identification is GNU 11.4.0
+[1.234s] -- Detecting C compiler ABI info
+[1.234s] -- Detecting C compiler ABI info - done
+[1.234s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.234s] -- Detecting C compile features
+[1.234s] -- Detecting C compile features - done
+[1.234s] -- Detecting CXX compiler ABI info
+[1.234s] -- Detecting CXX compiler ABI info - done
+[1.234s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.234s] -- Detecting CXX compile features
+[1.235s] -- Detecting CXX compile features - done
+[1.235s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.235s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.235s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.235s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[1.235s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.235s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.235s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.235s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.235s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.235s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.235s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.250s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.296s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.385s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.404s] -- Looking for pthread.h
+[1.525s] -- Looking for pthread.h - found
+[1.526s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.604s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.605s] -- Found Threads: TRUE  
+[1.851s] -- Found rclcpp_lifecycle: 16.0.8 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.914s] -- Found ament_cmake_gtest: 1.3.8 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[1.916s] -- Found launch_testing_ament_cmake: 1.0.5 (/opt/ros/humble/share/launch_testing_ament_cmake/cmake)
+[1.920s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.957s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.967s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.968s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.968s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.968s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.008s] -- Found PythonExtra: .so  
+[2.013s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[2.118s] -- Configuring done
+[2.124s] -- Generating done
+[2.127s] -- Build files have been written to: /home/dev-ros2/development/build/joint_limits
+[2.146s] Invoked command in '/home/dev-ros2/development/build/joint_limits' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake /home/dev-ros2/development/src/ros-controls/ros2_control/joint_limits -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dev-ros2/development/install/joint_limits
+[2.146s] Invoking command in '/home/dev-ros2/development/build/joint_limits': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --build /home/dev-ros2/development/build/joint_limits -- -j16 -l16
+[2.234s] [ 16%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[2.245s] [ 33%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[2.983s] [ 50%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[3.061s] [ 50%] Built target gtest_main
+[6.082s] [ 66%] [32m[1mLinking CXX static library libgtest.a[0m
+[6.219s] [ 66%] Built target gtest
+[6.257s] [ 83%] [32mBuilding CXX object CMakeFiles/joint_limits_rosparam_test.dir/test/joint_limits_rosparam_test.cpp.o[0m
+[14.287s] [100%] [32m[1mLinking CXX executable joint_limits_rosparam_test[0m
+[15.148s] [100%] Built target joint_limits_rosparam_test
+[15.181s] Invoked command in '/home/dev-ros2/development/build/joint_limits' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --build /home/dev-ros2/development/build/joint_limits -- -j16 -l16
+[15.459s] Invoking command in '/home/dev-ros2/development/build/joint_limits': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --install /home/dev-ros2/development/build/joint_limits
+[15.469s] -- Install configuration: ""
+[15.470s] -- Execute custom install script
+[15.473s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/include/joint_limits/joint_limits.hpp
+[15.491s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/include/joint_limits/joint_limits_rosparam.hpp
+[15.521s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/lib/joint_limits/joint_limits_rosparam_test
+[15.539s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/test/joint_limits_rosparam.yaml
+[15.552s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/ament_index/resource_index/package_run_dependencies/joint_limits
+[15.575s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/ament_index/resource_index/parent_prefix_path/joint_limits
+[15.592s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/environment/ament_prefix_path.sh
+[15.612s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/environment/ament_prefix_path.dsv
+[15.629s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/environment/path.sh
+[15.657s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/environment/path.dsv
+[15.689s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/local_setup.bash
+[15.720s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/local_setup.sh
+[15.757s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/local_setup.zsh
+[15.786s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/local_setup.dsv
+[15.803s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/package.dsv
+[15.851s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/ament_index/resource_index/packages/joint_limits
+[15.881s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/cmake/ament_cmake_export_dependencies-extras.cmake
+[15.895s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/cmake/ament_cmake_export_include_directories-extras.cmake
+[15.908s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/cmake/joint_limitsConfig.cmake
+[15.923s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/cmake/joint_limitsConfig-version.cmake
+[15.935s] -- Symlinking: /home/dev-ros2/development/install/joint_limits/share/joint_limits/package.xml
+[15.958s] Invoked command in '/home/dev-ros2/development/build/joint_limits' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dev-ros2/development/install/rqt_joint_trajectory_controller:/home/dev-ros2/development/install/rqt_controller_manager:/home/dev-ros2/development/install/ros2controlcli:/home/dev-ros2/development/install/ros2_controllers_test_nodes:/home/dev-ros2/development/install/rhex_control:/home/dev-ros2/development/install/my_robot_controller:/home/dev-ros2/development/install/my_py_pkg:/home/dev-ros2/development/install/activity_2:/opt/ros/humble /usr/bin/cmake --install /home/dev-ros2/development/build/joint_limits

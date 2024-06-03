@@ -6,7 +6,6 @@
 /home/dev-ros2/development/install/rhex_description/share/rhex_description/urdf/miscellaneous.xacro
 /home/dev-ros2/development/install/rhex_description/share/rhex_description/urdf/robot.urdf.xacro
 /home/dev-ros2/development/install/rhex_description/share/rhex_description/urdf/robot_gazebo.xacro
-/home/dev-ros2/development/install/rhex_description/share/rhex_description/launch/display_champ.launch.py
 /home/dev-ros2/development/install/rhex_description/share/rhex_description/launch/display_rhex.launch.py
 /home/dev-ros2/development/install/rhex_description/share/rhex_description/config/rhex_ros_control.yaml
 /home/dev-ros2/development/install/rhex_description/share/rhex_description/world/rhex_world.world

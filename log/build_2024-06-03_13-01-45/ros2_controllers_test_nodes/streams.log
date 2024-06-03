@@ -1,0 +1,26 @@
+[1.729s] Invoking command in '/home/dev-ros2/development/build/ros2_controllers_test_nodes': PYTHONPATH=/home/dev-ros2/development/build/ros2_controllers_test_nodes/prefix_override:/home/dev-ros2/development/install/ros2_controllers_test_nodes/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/ros2_controllers_test_nodes/build --no-deps symlink_data
+[2.096s] running develop
+[2.294s] running egg_info
+[2.294s] creating ros2_controllers_test_nodes.egg-info
+[2.295s] writing ros2_controllers_test_nodes.egg-info/PKG-INFO
+[2.296s] writing dependency_links to ros2_controllers_test_nodes.egg-info/dependency_links.txt
+[2.296s] writing entry points to ros2_controllers_test_nodes.egg-info/entry_points.txt
+[2.296s] writing requirements to ros2_controllers_test_nodes.egg-info/requires.txt
+[2.296s] writing top-level names to ros2_controllers_test_nodes.egg-info/top_level.txt
+[2.296s] writing manifest file 'ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[2.299s] reading manifest file 'ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[2.300s] writing manifest file 'ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[2.309s] running build_ext
+[2.309s] Creating /home/dev-ros2/development/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2-controllers-test-nodes.egg-link (link to .)
+[2.310s] Installing publisher_forward_position_controller script to /home/dev-ros2/development/install/ros2_controllers_test_nodes/lib/ros2_controllers_test_nodes
+[2.310s] Installing publisher_joint_trajectory_controller script to /home/dev-ros2/development/install/ros2_controllers_test_nodes/lib/ros2_controllers_test_nodes
+[2.310s] 
+[2.310s] Installed /home/dev-ros2/development/build/ros2_controllers_test_nodes
+[2.310s] running symlink_data
+[2.310s] creating /home/dev-ros2/development/install/ros2_controllers_test_nodes/share/ament_index
+[2.310s] creating /home/dev-ros2/development/install/ros2_controllers_test_nodes/share/ament_index/resource_index
+[2.310s] creating /home/dev-ros2/development/install/ros2_controllers_test_nodes/share/ament_index/resource_index/packages
+[2.310s] symbolically linking /home/dev-ros2/development/build/ros2_controllers_test_nodes/resource/ros2_controllers_test_nodes -> /home/dev-ros2/development/install/ros2_controllers_test_nodes/share/ament_index/resource_index/packages
+[2.310s] symbolically linking /home/dev-ros2/development/build/ros2_controllers_test_nodes/package.xml -> /home/dev-ros2/development/install/ros2_controllers_test_nodes/share/ros2_controllers_test_nodes
+[2.310s] creating /home/dev-ros2/development/install/ros2_controllers_test_nodes/share/ros2_controllers_test_nodes/configs
+[2.373s] Invoked command in '/home/dev-ros2/development/build/ros2_controllers_test_nodes' returned '0': PYTHONPATH=/home/dev-ros2/development/build/ros2_controllers_test_nodes/prefix_override:/home/dev-ros2/development/install/ros2_controllers_test_nodes/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/ros2_controllers_test_nodes/build --no-deps symlink_data

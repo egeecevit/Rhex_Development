@@ -1,0 +1,25 @@
+[1.740s] Invoking command in '/home/dev-ros2/development/build/activity_2': PYTHONPATH=/home/dev-ros2/development/build/activity_2/prefix_override:/home/dev-ros2/development/install/activity_2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/activity_2/build --no-deps symlink_data
+[2.024s] running develop
+[2.171s] running egg_info
+[2.174s] creating activity_2.egg-info
+[2.174s] writing activity_2.egg-info/PKG-INFO
+[2.174s] writing dependency_links to activity_2.egg-info/dependency_links.txt
+[2.175s] writing entry points to activity_2.egg-info/entry_points.txt
+[2.175s] writing requirements to activity_2.egg-info/requires.txt
+[2.175s] writing top-level names to activity_2.egg-info/top_level.txt
+[2.175s] writing manifest file 'activity_2.egg-info/SOURCES.txt'
+[2.175s] reading manifest file 'activity_2.egg-info/SOURCES.txt'
+[2.175s] writing manifest file 'activity_2.egg-info/SOURCES.txt'
+[2.178s] running build_ext
+[2.178s] Creating /home/dev-ros2/development/install/activity_2/lib/python3.10/site-packages/activity-2.egg-link (link to .)
+[2.180s] Installing number_counter script to /home/dev-ros2/development/install/activity_2/lib/activity_2
+[2.180s] Installing number_publisher script to /home/dev-ros2/development/install/activity_2/lib/activity_2
+[2.180s] 
+[2.180s] Installed /home/dev-ros2/development/build/activity_2
+[2.180s] running symlink_data
+[2.180s] creating /home/dev-ros2/development/install/activity_2/share/ament_index
+[2.181s] creating /home/dev-ros2/development/install/activity_2/share/ament_index/resource_index
+[2.181s] creating /home/dev-ros2/development/install/activity_2/share/ament_index/resource_index/packages
+[2.181s] symbolically linking /home/dev-ros2/development/build/activity_2/resource/activity_2 -> /home/dev-ros2/development/install/activity_2/share/ament_index/resource_index/packages
+[2.181s] symbolically linking /home/dev-ros2/development/build/activity_2/package.xml -> /home/dev-ros2/development/install/activity_2/share/activity_2
+[2.258s] Invoked command in '/home/dev-ros2/development/build/activity_2' returned '0': PYTHONPATH=/home/dev-ros2/development/build/activity_2/prefix_override:/home/dev-ros2/development/install/activity_2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/dev-ros2/development/build/activity_2/build --no-deps symlink_data

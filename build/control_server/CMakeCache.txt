@@ -332,7 +332,7 @@ ament_index_cpp_DIR:PATH=/opt/ros/humble/share/ament_index_cpp/cmake
 builtin_interfaces_DIR:PATH=/opt/ros/humble/share/builtin_interfaces/cmake
 
 //The directory containing a CMake configuration file for control_msgs.
-control_msgs_DIR:PATH=/home/dev-ros2/development/install/control_msgs/share/control_msgs/cmake
+control_msgs_DIR:PATH=/opt/ros/humble/share/control_msgs/cmake
 
 //Value Computed by CMake
 control_server_BINARY_DIR:STATIC=/home/dev-ros2/development/build/control_server
