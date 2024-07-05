@@ -1,3 +1,0 @@
-/home/dev-ros2/development/install/imu_sensor_broadcaster/lib/libimu_sensor_broadcaster.so
-/home/dev-ros2/development/install/imu_sensor_broadcaster/share/imu_sensor_broadcaster/cmake/export_imu_sensor_broadcasterExport.cmake
-/home/dev-ros2/development/install/imu_sensor_broadcaster/share/imu_sensor_broadcaster/cmake/export_imu_sensor_broadcasterExport-noconfig.cmake

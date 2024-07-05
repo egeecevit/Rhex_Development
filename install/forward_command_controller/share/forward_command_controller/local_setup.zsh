@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/forward_command_controller/ament_cmake_environment_hooks/local_setup.zsh

@@ -84,7 +84,7 @@ def generate_launch_description():
             '-topic', '/robot_description',
             '-x', '0',
             '-y', '0',
-            '-z' '1.75'
+            '-z' '0.1'
         ],
         output='screen',
     )
@@ -133,7 +133,6 @@ def generate_launch_description():
     )
 
 
-
     return LaunchDescription([
         declare_use_sim_time,
         declare_host,
@@ -148,8 +147,8 @@ def generate_launch_description():
         #gzserver_cmd,
         #gzclient_cmd,
         spawn_entity,
-        load_effort_controller,
-        load_joint_state_controller,
-        controller_node,
+        #load_effort_controller,
+        #load_joint_state_controller,
+        #controller_node,
         #joint_state_publisher_node
     ])

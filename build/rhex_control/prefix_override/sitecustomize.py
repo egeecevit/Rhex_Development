@@ -1,3 +1,4 @@
 import sys
-sys.real_prefix = sys.prefix
-sys.prefix = sys.exec_prefix = '/home/dev-ros2/development/install/rhex_control'
+if sys.prefix == '/usr':
+    sys.real_prefix = sys.prefix
+    sys.prefix = sys.exec_prefix = '/home/ege/development/rhex_ws/install/rhex_control'

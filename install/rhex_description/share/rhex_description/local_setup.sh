@@ -1,1 +1,1 @@
-/home/dev-ros2/development/build/rhex_description/ament_cmake_environment_hooks/local_setup.sh
+/home/ege/development/rhex_ws/build/rhex_description/ament_cmake_environment_hooks/local_setup.sh

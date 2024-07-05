@@ -69,9 +69,9 @@ COPY robot_x64/ /home/${USERNAME}/robot/
 #Add this line if there exist some authorization issues
 #RUN chown -R $USERNAME:$USERNAME /home/${USERNAME}/robot
 
-ENV ROBOMETU_LINUX_DIR=/home/${USERNAME}/robot/RoboMETU.linux
-ENV TRHEX_LINUX_DIR=/home/${USERNAME}/robot/TRHex.linux
-ENV RHEX_API_DIR=/home/${USERNAME}/robot/rhex-api
+ENV ROBOMETU_LINUX_DIR=/home/${USERNAME}/development/robot_x64/RoboMETU.linux
+ENV TRHEX_LINUX_DIR=/home/${USERNAME}/development/robot_x64/TRHex.linux
+ENV RHEX_API_DIR=/home/${USERNAME}/development/robot_x64/rhex-api
 
 
 

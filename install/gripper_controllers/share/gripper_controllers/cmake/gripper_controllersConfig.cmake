@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/gripper_controllers/ament_cmake_core/gripper_controllersConfig.cmake

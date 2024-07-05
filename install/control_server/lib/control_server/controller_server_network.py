@@ -1,1 +1,1 @@
-/home/dev-ros2/development/src/control_server/src/controller_server_network.py
+/home/ege/development/rhex_ws/src/control_server/scripts/controller_server_network.py

@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/control_msgs/rosidl_generator_c/control_msgs/action/detail/gripper_command__type_support.h

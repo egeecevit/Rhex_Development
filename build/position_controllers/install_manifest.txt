@@ -1,3 +1,0 @@
-/home/dev-ros2/development/install/position_controllers/lib/libposition_controllers.so
-/home/dev-ros2/development/install/position_controllers/share/position_controllers/cmake/export_position_controllersExport.cmake
-/home/dev-ros2/development/install/position_controllers/share/position_controllers/cmake/export_position_controllersExport-noconfig.cmake

@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/dev-ros2/development/install/control_server/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/ege/development/rhex_ws/install/control_server/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/dev-ros2/development/install/control_server/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/ege/development/rhex_ws/install/control_server/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/dev-ros2/development/install/control_server/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/ege/development/rhex_ws/install/control_server/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/dev-ros2/development/install/control_server/${destination}")
+      set(destination "/home/ege/development/rhex_ws/install/control_server/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -292,7 +292,7 @@ function(_ament_cmake_symlink_install_create_symlink absolute_file symlink)
   endif()
 
   execute_process(
-    COMMAND "/usr/bin/cmake" "-E" "create_symlink"
+    COMMAND "/home/ege/.local/lib/python3.10/site-packages/cmake/data/bin/cmake" "-E" "create_symlink"
       "${absolute_file}"
       "${symlink}"
   )
@@ -310,50 +310,50 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(PROGRAMS "src/controller_server_network.py" "DESTINATION" "lib/control_server")
-ament_cmake_symlink_install_programs("/home/dev-ros2/development/src/control_server" PROGRAMS "src/controller_server_network.py" "DESTINATION" "lib/control_server")
+# install(PROGRAMS "scripts/controller_server_network.py" "DESTINATION" "lib/control_server")
+ament_cmake_symlink_install_programs("/home/ege/development/rhex_ws/src/control_server" PROGRAMS "scripts/controller_server_network.py" "DESTINATION" "lib/control_server")
 
-# install(DIRECTORY "launch" "src" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_directory("/home/dev-ros2/development/src/control_server" DIRECTORY "launch" "src" "DESTINATION" "share/control_server")
+# install(DIRECTORY "launch" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_directory("/home/ege/development/rhex_ws/src/control_server" DIRECTORY "launch" "DESTINATION" "share/control_server")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/control_server" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/control_server" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/control_server" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/control_server" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/control_server" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/control_server" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/control_server" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/control_server" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/control_server/environment")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/control_server/environment")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/control_server/environment")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/control_server/environment")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/control_server/environment")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/control_server/environment")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/control_server/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/control_server/environment")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/control_server/environment")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/control_server/environment")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/control_server/environment")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/control_server/environment")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/control_server/environment")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/control_server/environment")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/control_server")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/control_server")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/control_server")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/control_server")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/control_server")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/control_server")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/control_server")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/control_server")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/control_server")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/control_server")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_index/share/ament_index/resource_index/packages/control_server" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_index/share/ament_index/resource_index/packages/control_server" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_index/share/ament_index/resource_index/packages/control_server" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_index/share/ament_index/resource_index/packages/control_server" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/dev-ros2/development/build/control_server/ament_cmake_core/control_serverConfig.cmake" "/home/dev-ros2/development/build/control_server/ament_cmake_core/control_serverConfig-version.cmake" "DESTINATION" "share/control_server/cmake")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/build/control_server/ament_cmake_core/control_serverConfig.cmake" "/home/dev-ros2/development/build/control_server/ament_cmake_core/control_serverConfig-version.cmake" "DESTINATION" "share/control_server/cmake")
+# install(FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_core/control_serverConfig.cmake" "/home/ege/development/rhex_ws/build/control_server/ament_cmake_core/control_serverConfig-version.cmake" "DESTINATION" "share/control_server/cmake")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/build/control_server/ament_cmake_core/control_serverConfig.cmake" "/home/ege/development/rhex_ws/build/control_server/ament_cmake_core/control_serverConfig-version.cmake" "DESTINATION" "share/control_server/cmake")
 
-# install(FILES "/home/dev-ros2/development/src/control_server/package.xml" "DESTINATION" "share/control_server")
-ament_cmake_symlink_install_files("/home/dev-ros2/development/src/control_server" FILES "/home/dev-ros2/development/src/control_server/package.xml" "DESTINATION" "share/control_server")
+# install(FILES "/home/ege/development/rhex_ws/src/control_server/package.xml" "DESTINATION" "share/control_server")
+ament_cmake_symlink_install_files("/home/ege/development/rhex_ws/src/control_server" FILES "/home/ege/development/rhex_ws/src/control_server/package.xml" "DESTINATION" "share/control_server")

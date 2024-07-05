@@ -1,1 +1,0 @@
-/home/dev-ros2/development/src/ros-controls/ros2_control_demos/example_10/description/launch/view_robot.launch.py

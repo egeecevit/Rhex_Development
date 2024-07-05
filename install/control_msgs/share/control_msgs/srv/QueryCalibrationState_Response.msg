@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/control_msgs/rosidl_cmake/srv/QueryCalibrationState_Response.msg

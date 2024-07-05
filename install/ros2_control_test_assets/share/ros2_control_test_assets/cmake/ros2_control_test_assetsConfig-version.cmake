@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/ros2_control_test_assets/ament_cmake_core/ros2_control_test_assetsConfig-version.cmake

@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/effort_controllers/ament_cmake_core/effort_controllersConfig-version.cmake

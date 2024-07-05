@@ -1,8 +1,8 @@
-# Install script for directory: /home/dev-ros2/development/src/rhex_description
+# Install script for directory: /home/ege/development/rhex_ws/src/rhex_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dev-ros2/development/install/rhex_description")
+  set(CMAKE_INSTALL_PREFIX "/home/ege/development/rhex_ws/install/rhex_description")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -42,8 +42,8 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/dev-ros2/development/build/rhex_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/ege/development/rhex_ws/build/rhex_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dev-ros2/development/build/rhex_description/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ege/development/rhex_ws/build/rhex_description/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

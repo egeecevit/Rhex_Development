@@ -1,1 +1,0 @@
-/home/dev-ros2/development/src/ros-controls/ros2_control/transmission_interface/include/transmission_interface/four_bar_linkage_transmission_loader.hpp

@@ -1,1 +1,0 @@
-/home/dev-ros2/development/build/ackermann_steering_controller/ament_cmake_environment_hooks/local_setup.sh
