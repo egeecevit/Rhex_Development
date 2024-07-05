@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': ["obtain_image = get_image.obtain_image:main",
-                            "obtain_pointcloud = get_image.obtain_pointcloud:main",
+                            "mark_point = get_image.mark_point:main",
         ],
     },
 )

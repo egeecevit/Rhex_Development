@@ -12,8 +12,8 @@
   <depend>cv_bridge</depend>
   <depend>opencv</depend>
   <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
   <depend>sensor_msgs_py</depend>
-  <depend>open3d</depend>
   <depend>numpy</depend>
 
   <test_depend>ament_copyright</test_depend>

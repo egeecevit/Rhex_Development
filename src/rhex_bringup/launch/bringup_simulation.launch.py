@@ -42,10 +42,17 @@ def generate_launch_description():
         output='screen'
     )
 
+    ar_mark_node = Node(
+        package="get_image",
+        executable="mark_point",
+        output="screen"
+    )
+
     return LaunchDescription([
         start_script_supervisor,
         start_display_rhex,
         start_launch_controller_server,
         start_script_gui,
-        camera_node
+        #camera_node
+        #ar_mark_node
     ])
