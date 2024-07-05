@@ -33,8 +33,8 @@ class GetOdom(Node):
             _, _, self.last_pose_theta = self.euler_from_quaternion(msg.pose.pose.orientation)
 
             self.init_odom_state = True
-            self.assign_point()  # Assign point once after initial odom is received
             self.get_logger().info(f'Initial pose_x: {self.last_pose_x}, pose_y: {self.last_pose_y}, pose_theta: {self.last_pose_theta}')
+            self.assign_point()  # Assign point once after initial odom is received
             
             # Unsubscribe from the topic after receiving the initial odom data
             self.destroy_subscription(self.subscriber_)
