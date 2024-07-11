@@ -1,129 +1,118 @@
 import rclpy
 from rclpy.node import Node
-from nav_msgs.msg import Odometry
-import numpy as np
 from sensor_msgs.msg import Image
-import cv2
+from nav_msgs.msg import Odometry
 from cv_bridge import CvBridge
+import cv2
+import numpy as np
+from scipy.spatial.transform import Rotation as R
 
-class GetOdom(Node):
+class ImageProcessor(Node):
     def __init__(self):
-        super().__init__("get_odom")
-        self.odom = Odometry()
-        self.last_pose_x = None
-        self.last_pose_y = None
-        self.last_pose_theta = None
-        self.point_pose_x = None
-        self.point_pose_y = None
-        self.point_pose_theta = None
-        self.init_odom_state = False
-
-        self.subscriber_ = self.create_subscription(
+        super().__init__('mark_point')
+        self.subscription = self.create_subscription(
+            Image,
+            '/depth_camera/image_raw',
+            self.image_callback,
+            10)
+        self.odom_subscription = self.create_subscription(
             Odometry,
-            "/odom/robot_pos",
+            '/odom/robot_pos',
             self.odom_callback,
-            10
-        )
-        self.get_logger().info("get_odom node has been started")
+            10)
+        self.bridge = CvBridge()
+
+        # Camera intrinsic parameters
+        width = 640
+        height = 480
+        horizontal_fov = 1.047198  # radians
+
+        # Calculate the focal lengths
+        fx = width / (2 * np.tan(horizontal_fov / 2))
+        fy = fx * (height / width)
+
+        # Principal points (assuming the camera center is the image center)
+        cx = width / 2
+        cy = height / 2
+
+        self.camera_matrix = np.array([[fx, 0, cx],
+                                       [0, fy, cy],
+                                       [0, 0, 1]])
+
+        # Camera offset in the robot's coordinate frame
+        self.camera_offset = np.array([[0.2695], [0.0055], [0.112]])  
+
+        self.robot_pose = None
+        self.fov_horizontal = 60  # in degrees
+        self.fov_vertical = 40  # in degrees
+        self.get_logger().info(f'Mark point node has started with camera matrix: \n{self.camera_matrix}')
 
     def odom_callback(self, msg):
-        if not self.init_odom_state:
-            self.last_pose_x = msg.pose.pose.position.x
-            self.last_pose_y = msg.pose.pose.position.y
-            _, _, self.last_pose_theta = self.euler_from_quaternion(msg.pose.pose.orientation)
+        self.robot_pose = msg.pose.pose
+        self.get_logger().info(f'Received robot pose: {self.robot_pose.position.x}, {self.robot_pose.position.y}, {self.robot_pose.position.z}')
 
-            self.init_odom_state = True
-            self.get_logger().info(f'Initial pose_x: {self.last_pose_x}, pose_y: {self.last_pose_y}, pose_theta: {self.last_pose_theta}')
-            self.assign_point()  # Assign point once after initial odom is received
-            
-            # Unsubscribe from the topic after receiving the initial odom data
-            self.destroy_subscription(self.subscriber_)
-
-    def euler_from_quaternion(self, quat):
-        """
-        Convert quaternion (w in last place) to euler roll, pitch, yaw.
-        quat = [x, y, z, w]
-        """
-        x = quat.x
-        y = quat.y
-        z = quat.z
-        w = quat.w
-
-        sinr_cosp = 2 * (w * x + y * z)
-        cosr_cosp = 1 - 2 * (x * x + y * y)
-        roll = np.arctan2(sinr_cosp, cosr_cosp)
-
-        sinp = 2 * (w * y - z * x)
-        pitch = np.arcsin(sinp)
-
-        siny_cosp = 2 * (w * z + x * y)
-        cosy_cosp = 1 - 2 * (y * y + z * z)
-        yaw = np.arctan2(siny_cosp, cosy_cosp)
-
-        return roll, pitch, yaw
-
-    def assign_point(self):
-        self.point_pose_x = self.last_pose_x + 1.0
-        self.point_pose_y = self.last_pose_y
-        self.point_pose_theta = self.last_pose_theta
-        print(f"Initial Point Pose: {self.point_pose_x}, {self.point_pose_y}, {self.point_pose_theta}")
-
-class ImageSubscriber(Node):
-    def __init__(self, odom_node):
-        super().__init__("image_subscriber")
-        self.subscriber_ = self.create_subscription(
-            Image,
-            "/depth_camera/image_raw",
-            self.image_callback,
-            10
-        )
-        self.get_logger().info("Image Subscriber node has been started.")
-        self.bridge = CvBridge()
-        self.image = None
-        self.odom_node = odom_node
+    def is_point_in_fov(self, point_3d):
+        x, y, z = point_3d
+        horizontal_angle = np.degrees(np.arctan2(x, z))
+        vertical_angle = np.degrees(np.arctan2(-y, z))
+        self.get_logger().info(f'Horizontal angle: {horizontal_angle}, Vertical angle: {vertical_angle}')
+        return (abs(horizontal_angle) <= self.fov_horizontal / 2) and (abs(vertical_angle) <= self.fov_vertical / 2)
 
     def image_callback(self, msg):
-        self.image = self.bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
-        self.visualize_point()
-
-    def visualize_point(self):
-        if not self.odom_node.init_odom_state or self.image is None:
+        if self.robot_pose is None:
+            self.get_logger().info('Robot pose not yet received')
             return
-        x = self.odom_node.last_pose_x
-        y = self.odom_node.last_pose_y
-        theta = self.odom_node.last_pose_theta
-        p_x = self.odom_node.point_pose_x
-        p_y = self.odom_node.point_pose_y
-        p_theta = self.odom_node.point_pose_theta
 
-        point_tf_x = p_x - x
-        point_tf_y = p_y - y
+        # Convert ROS Image message to OpenCV image
+        cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
 
-        p_x_world = x + (point_tf_x) * np.cos(theta) - (point_tf_y) * np.sin(theta)
-        p_y_world = y + (point_tf_x) * np.sin(theta) + (point_tf_y) * np.cos(theta)
+        # Get the robot orientation as a rotation matrix
+        orientation_q = self.robot_pose.orientation
+        orientation = R.from_quat([orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w])
+        rotation_matrix = orientation.as_matrix()
 
-        img_point_x = int(p_x_world * 100)  # Scale for visualization
-        img_point_y = int(p_y_world * 100)
+        # 3D point 1 meter ahead in the world frame
+        point_3d_robot = np.array([[1.0], [0.0], [0.0]])  # Only x, y, z
 
-        cv2.circle(self.image, (img_point_x, img_point_y), 5, (0, 0, 255), -1)
+
+        # Transform the point to the world frame using the robot's position
+        point_in_world_frame = point_3d_robot + self.camera_offset + np.array([[self.robot_pose.position.x], [self.robot_pose.position.y], [self.robot_pose.position.z]])
+
+        self.get_logger().info(f'Point in world frame: {point_in_world_frame.flatten()}')
+
+        if point_in_world_frame[2, 0] <= 0:
+            self.get_logger().info('Point is behind the camera')
+            return
+
+        point_3d = np.array([[0.0, 0.0, 1.0], [0.0, 1.0, 0.0], [-1.0, 0.0, 0.0]]) @ rotation_matrix @ point_in_world_frame
+        # Project the 3D point to 2D
+        point_2d = self.camera_matrix @ np.vstack((point_3d, [1]))[:3, :]
+        point_2d = point_2d / point_2d[2]  # Normalize by the third coordinate
+
+        self.get_logger().info(f'Projected 2D point: {point_2d}')
+
+        # if not self.is_point_in_fov(point_2d.flatten()):
+        #     self.get_logger().info('Point is outside the FOV')
+        #     return  # Point is outside the FOV
+
+        # Check if the point is within the image boundaries
+        if 0 <= point_2d[0, 0] < cv_image.shape[1] and 0 <= point_2d[1, 0] < cv_image.shape[0]:
+            # Draw the point on the image
+            cv2.circle(cv_image, (int(point_2d[0, 0]), int(point_2d[1, 0])), 5, (0, 0, 255), -1)
+            self.get_logger().info('Point drawn on image')
+        else:
+            self.get_logger().info('Projected point is outside the image boundaries')
 
         # Display the image
-        cv2.imshow("Image with Point", self.image)
+        cv2.imshow('Image with 3D point', cv_image)
         cv2.waitKey(1)
 
 def main(args=None):
     rclpy.init(args=args)
-    node_odom = GetOdom()
-    node_image = ImageSubscriber(node_odom)
-
-    rclpy.spin_once(node_odom)  # Ensure the odom node gets its initial data
-
-    rclpy.spin(node_image)
-
-    node_odom.destroy_node()
-    node_image.destroy_node()
+    node = ImageProcessor()
+    rclpy.spin(node)
+    node.destroy_node()
     rclpy.shutdown()
-    cv2.destroyAllWindows()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
