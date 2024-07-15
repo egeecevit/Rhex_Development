@@ -68,18 +68,23 @@ class ImageProcessor(Node):
         cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
 
 
-        camera_position_in_world_frame = np.array([self.robot_pose.position.x, 
-                                                self.robot_pose.position.y, 
-                                                self.robot_pose.position.z]) + self.camera_offset
+        camera_position_in_world_frame = np.array([[self.robot_pose.position.x],
+                                                [self.robot_pose.position.y], 
+                                                [self.robot_pose.position.z]]) + self.camera_offset
         
+        print(f'Camera position in world frame: {camera_position_in_world_frame}\n')
 
         # Update the transformation matrix with dynamic translation values
-        transform_matrix_world_to_camera = np.array([[0.0, -1.0, 0.0, -camera_position_in_world_frame[1]],
-                                                    [0.0, 0.0, -1.0, -camera_position_in_world_frame[2]],
-                                                    [1.0, 0.0, 0.0, -camera_position_in_world_frame[0]],
+        transform_matrix_world_to_camera = np.array([[0.0, -1.0, 0.0, camera_position_in_world_frame[1,0]],
+                                                    [0.0, 0.0, -1.0, camera_position_in_world_frame[2,0]],
+                                                    [1.0, 0.0, 0.0, camera_position_in_world_frame[0,0]],
                                                     [0.0, 0.0, 0.0, 1.0]])
+        
+        print(f'Static point in world frame: {self.static_point_world_frame}\n')
 
-        point_in_world_frame_homogeneous = np.append(self.static_point_world_frame, [[1]], axis=0)
+        point_in_world_frame_homogeneous = np.append(self.static_point_world_frame, [[1.0]], axis=0)
+
+        print(f'Point in world frame(homogeneous): {point_in_world_frame_homogeneous}\n')
                                                      
         point_in_camera_frame = transform_matrix_world_to_camera @ point_in_world_frame_homogeneous
 
