@@ -5,7 +5,7 @@ from nav_msgs.msg import Odometry
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
-from transforms3d.quaternions import quat2mat
+from scipy.spatial.transform import Rotation as R
 
 class ImageProcessor(Node):
     def __init__(self):
@@ -40,7 +40,7 @@ class ImageProcessor(Node):
                                        [0, 0, 1]])
 
         # Camera offset in the robot's coordinate frame
-        self.camera_offset = np.array([[0.2695], [0.0055], [0.112]])  
+        self.camera_offset = np.array([[-0.0075], [0.0105], [0.0025]])  
 
         self.robot_pose = None
         self.static_point_world_frame = None
@@ -74,9 +74,9 @@ class ImageProcessor(Node):
         
 
         # Update the transformation matrix with dynamic translation values
-        transform_matrix_world_to_camera = np.array([[0.0, -1.0, 0.0, -camera_position_in_world_frame[1]],
-                                                    [0.0, 0.0, -1.0, -camera_position_in_world_frame[2]],
-                                                    [1.0, 0.0, 0.0, -camera_position_in_world_frame[0]],
+        transform_matrix_world_to_camera = np.array([[0.0, -1.0, 0.0, camera_position_in_world_frame[1,0]],
+                                                    [0.0, 0.0, -1.0, camera_position_in_world_frame[2,0]],
+                                                    [1.0, 0.0, 0.0, camera_position_in_world_frame[0,0]],
                                                     [0.0, 0.0, 0.0, 1.0]])
 
         point_in_world_frame_homogeneous = np.append(self.static_point_world_frame, [[1]], axis=0)
