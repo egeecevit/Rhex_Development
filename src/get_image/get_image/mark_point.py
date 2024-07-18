@@ -13,6 +13,7 @@ from geometry_msgs.msg import PointStamped
 from transforms3d.quaternions import quat2mat
 from geometry_msgs.msg import TransformStamped
 import transforms3d
+import math
 
 class ImageProcessor(Node):
     def __init__(self):
@@ -136,12 +137,36 @@ class ImageProcessor(Node):
             # Normalize the 2D coordinates by dividing by the third coordinate
             point_2d = point_2d_homogeneous[:2] / point_2d_homogeneous[2]
             self.get_logger().info(f'Projected 2D point: {point_2d}\n')
+            
+            axis_length = 50
+            axis_length_x = 25
 
             # # Check if the point is within the image boundaries
             if 0 <= point_2d[0] and point_2d[0] < cv_image.shape[1] and 0 <= point_2d[1] and point_2d[1] < cv_image.shape[0]:
+                point_2d = (int(point_2d[0]), int(point_2d[1]))
                 # Draw the point on the image
-                cv2.circle(cv_image, (int(point_2d[0]), int(point_2d[1])), 5, (0, 0, 255), -1)
+                cv2.circle(cv_image, point_2d, 3, (0, 0, 0), -1)
                 self.get_logger().info('Point drawn on image\n')
+                x_end = (point_2d[0] - axis_length_x, point_2d[1] - axis_length_x)
+                y_end = (point_2d[0] - axis_length, point_2d[1])
+                z_end = (point_2d[0], point_2d[1] - axis_length)
+
+                  # Draw the axes
+                cv2.line(cv_image, point_2d, y_end, (0, 255, 0), 2) # Y-axis (Green)
+                cv2.line(cv_image, point_2d, z_end, (255, 0, 0), 2) # Z-axis (Blue)
+                cv2.line(cv_image, point_2d, x_end, (0, 0, 255), 2) # X-axis (Red)
+
+                # Add labels to the axes
+                font = cv2.FONT_HERSHEY_SIMPLEX
+                font_scale = 0.5
+                thickness = 1
+                color_x = (0, 0, 255) # White color for the labels
+                color_y = (0, 255, 0)
+                color_z = (255, 0, 0)
+                cv2.putText(cv_image, 'X', (x_end[0] - 5, x_end[1] - 5), font, font_scale, color_x, thickness, cv2.LINE_AA)
+                cv2.putText(cv_image, 'Y', (y_end[0] -5 , y_end[1] - 2), font, font_scale, color_y, thickness, cv2.LINE_AA)
+                cv2.putText(cv_image, 'Z', (z_end[0], z_end[1] - 5), font, font_scale, color_z, thickness, cv2.LINE_AA)
+
             else:
                 self.get_logger().info('Projected point is outside the image boundaries\n')
 
