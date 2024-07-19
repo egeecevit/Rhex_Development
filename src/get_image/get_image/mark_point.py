@@ -6,14 +6,12 @@ from nav_msgs.msg import Odometry
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
-from scipy.spatial.transform import Rotation as R
 import tf2_ros
 from tf2_ros import TransformException
 from geometry_msgs.msg import PointStamped
-from transforms3d.quaternions import quat2mat
+from tf2_geometry_msgs import do_transform_point
 from geometry_msgs.msg import TransformStamped
-import transforms3d
-import math
+
 
 class ImageProcessor(Node):
     def __init__(self):
@@ -55,19 +53,20 @@ class ImageProcessor(Node):
         self.fov_horizontal = 60  # in degrees
         self.fov_vertical = 45  # in degrees
 
+        self.odom_timestamp = None
         self.br = tf2_ros.TransformBroadcaster(self)
-        self.timer = self.create_timer(0.01, self.broadcast_transform)
+        #self.timer = self.create_timer(0.01, self.broadcast_transform)
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
-        self.timer = self.create_timer(0.05, self.listen_transform)
+        #self.timer = self.create_timer(0.05, self.listen_transform)
         self.get_logger().info(f'Mark point node has started with camera matrix: \n{self.camera_matrix}')
 
 
 
     def broadcast_transform(self):
-        if self.robot_pose is not None:
+        if self.robot_pose is not None and self.odom_timestamp is not None:
             t = TransformStamped()
-            t.header.stamp = self.get_clock().now().to_msg()
+            t.header.stamp = self.odom_timestamp
             t.header.frame_id = 'world'
             t.child_frame_id = 'base_link'
             t.transform.translation.x = self.robot_pose.position.x
@@ -88,7 +87,15 @@ class ImageProcessor(Node):
         if self.tf_buffer.can_transform('camera_depth_frame', 'world', rclpy.time.Time(seconds=0)):
             try:
                 transform = self.tf_buffer.lookup_transform('camera_depth_frame', 'world', rclpy.time.Time(seconds=0))
-                point_in_camera_frame = self.transform_point(self.static_point_world_frame, transform)
+                point_stamped = PointStamped()
+                point_stamped.header.frame_id = 'world'
+                point_stamped.point.x = self.static_point_world_frame[0]
+                point_stamped.point.y = self.static_point_world_frame[1]
+                point_stamped.point.z = self.static_point_world_frame[2]
+                point_in_camera_frame_stamped = do_transform_point(point_stamped, transform)
+                point_in_camera_frame = np.array([point_in_camera_frame_stamped.point.x,
+                                                  point_in_camera_frame_stamped.point.y,
+                                                  point_in_camera_frame_stamped.point.z])
                 self.get_logger().info(f'Point in camera frame: {point_in_camera_frame}\n')
 
             except TransformException as e:
@@ -99,21 +106,11 @@ class ImageProcessor(Node):
         else:
             return
 
-    def transform_point(self, point, transform):
-        translation = transform.transform.translation
-        rotation = transform.transform.rotation
-
-        quat = [rotation.w, rotation.x, rotation.y, rotation.z]
-        rotation_matrix = quat2mat(quat)
-        self.get_logger().info(f'Rotation matrix: {rotation_matrix}\n')
-
-        point_transformed = rotation_matrix.dot(point) + np.array([translation.x, translation.y, translation.z])
-
-        return point_transformed
-
     def odom_callback(self, msg):
         self.robot_pose = msg.pose.pose
-        self.get_logger().info(f'Received header: {msg.header}\n')
+        self.odom_timestamp = msg.header.stamp
+        self.broadcast_transform()
+
         if self.static_point_world_frame is None:
             point_3d_robot = np.array([1.0, 0.0, 0.0])  # Only x, y, z
             self.static_point_world_frame = point_3d_robot + np.array([self.robot_pose.position.x, 
