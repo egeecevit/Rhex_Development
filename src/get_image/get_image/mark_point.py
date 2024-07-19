@@ -56,30 +56,33 @@ class ImageProcessor(Node):
         self.fov_vertical = 45  # in degrees
 
         self.br = tf2_ros.TransformBroadcaster(self)
-        self.timer = self.create_timer(0.5, self.broadcast_transform)
+        self.timer = self.create_timer(0.01, self.broadcast_transform)
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
-        self.timer = self.create_timer(1, self.listen_transform)
+        self.timer = self.create_timer(0.05, self.listen_transform)
         self.get_logger().info(f'Mark point node has started with camera matrix: \n{self.camera_matrix}')
 
 
 
     def broadcast_transform(self):
-        t = TransformStamped()
-        t.header.stamp = self.get_clock().now().to_msg()
-        t.header.frame_id = 'world'
-        t.child_frame_id = 'base_link'
-        t.transform.translation.x = self.robot_pose.position.x
-        t.transform.translation.y = self.robot_pose.position.y
-        t.transform.translation.z = self.robot_pose.position.z
+        if self.robot_pose is not None:
+            t = TransformStamped()
+            t.header.stamp = self.get_clock().now().to_msg()
+            t.header.frame_id = 'world'
+            t.child_frame_id = 'base_link'
+            t.transform.translation.x = self.robot_pose.position.x
+            t.transform.translation.y = self.robot_pose.position.y
+            t.transform.translation.z = self.robot_pose.position.z
 
-        q = self.robot_pose.orientation
-        t.transform.rotation.x = q.x
-        t.transform.rotation.y = q.y
-        t.transform.rotation.z = q.z
-        t.transform.rotation.w = q.w
+            q = self.robot_pose.orientation
+            t.transform.rotation.x = q.x
+            t.transform.rotation.y = q.y
+            t.transform.rotation.z = q.z
+            t.transform.rotation.w = q.w
 
-        self.br.sendTransform(t)
+            self.br.sendTransform(t)
+        else:
+            return
 
     def listen_transform(self):
         if self.tf_buffer.can_transform('camera_depth_frame', 'world', rclpy.time.Time(seconds=0)):
@@ -110,6 +113,7 @@ class ImageProcessor(Node):
 
     def odom_callback(self, msg):
         self.robot_pose = msg.pose.pose
+        self.get_logger().info(f'Received header: {msg.header}\n')
         if self.static_point_world_frame is None:
             point_3d_robot = np.array([1.0, 0.0, 0.0])  # Only x, y, z
             self.static_point_world_frame = point_3d_robot + np.array([self.robot_pose.position.x, 
