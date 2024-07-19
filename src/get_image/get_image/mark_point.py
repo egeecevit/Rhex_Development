@@ -55,10 +55,8 @@ class ImageProcessor(Node):
 
         self.odom_timestamp = None
         self.br = tf2_ros.TransformBroadcaster(self)
-        #self.timer = self.create_timer(0.01, self.broadcast_transform)
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
-        #self.timer = self.create_timer(0.05, self.listen_transform)
         self.get_logger().info(f'Mark point node has started with camera matrix: \n{self.camera_matrix}')
 
 
