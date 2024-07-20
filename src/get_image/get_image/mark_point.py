@@ -114,9 +114,9 @@ class ImageProcessor(Node):
             self.static_point_world_frame = point_3d_robot + np.array([self.robot_pose.position.x, 
                                                                         self.robot_pose.position.y, 
                                                                         self.robot_pose.position.z]) + self.camera_offset
-            self.get_logger().info(f'Static point in world frame: {self.static_point_world_frame}\n')
-
-        self.get_logger().info(f'Received robot pose: {self.robot_pose.position.x}, {self.robot_pose.position.y}, {self.robot_pose.position.z}\n')
+            
+        #self.get_logger().info(f'Static point in world frame: {self.static_point_world_frame}\n')
+        #self.get_logger().info(f'Received robot pose: {self.robot_pose.position.x}, {self.robot_pose.position.y}, {self.robot_pose.position.z}\n')
 
     def image_callback(self, msg):
         if self.robot_pose is None or self.static_point_world_frame is None:
@@ -141,11 +141,11 @@ class ImageProcessor(Node):
             axis_length_x = 25
 
             # # Check if the point is within the image boundaries
-            if 0 <= point_2d[0] and point_2d[0] < cv_image.shape[1] and 0 <= point_2d[1] and point_2d[1] < cv_image.shape[0]:
+            if 0 <= point_2d[0] and point_2d[0] < cv_image.shape[1] and 0 <= point_2d[1] and point_2d[1] < cv_image.shape[0] and point_in_camera_frame[2] > 0:
                 point_2d = (int(point_2d[0]), int(point_2d[1]))
                 # Draw the point on the image
                 cv2.circle(cv_image, point_2d, 3, (0, 0, 0), -1)
-                self.get_logger().info('Point drawn on image\n')
+                #self.get_logger().info('Point drawn on image\n')
                 x_end = (point_2d[0] - axis_length_x, point_2d[1] - axis_length_x)
                 y_end = (point_2d[0] - axis_length, point_2d[1])
                 z_end = (point_2d[0], point_2d[1] - axis_length)
