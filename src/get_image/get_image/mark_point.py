@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import rclpy
 import rclpy.duration
 from rclpy.node import Node
