@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': ["obtain_image = get_image.obtain_image:main",
                             "mark_point = get_image.mark_point:main",
+                            "ar_point = get_image.ar_point:main"
         ],
     },
 )

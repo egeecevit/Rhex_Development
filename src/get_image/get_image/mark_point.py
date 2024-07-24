@@ -2,6 +2,7 @@
 import rclpy
 import rclpy.duration
 from rclpy.node import Node
+import rclpy.timer
 from sensor_msgs.msg import Image
 from nav_msgs.msg import Odometry
 from cv_bridge import CvBridge
@@ -12,6 +13,7 @@ from tf2_ros import TransformException
 from geometry_msgs.msg import PointStamped
 from tf2_geometry_msgs import do_transform_point
 from geometry_msgs.msg import TransformStamped
+import time
 
 
 class ImageProcessor(Node):
@@ -53,6 +55,9 @@ class ImageProcessor(Node):
         self.static_point_world_frame = None
         self.fov_horizontal = 60  # in degrees
         self.fov_vertical = 45  # in degrees
+        self.start_time = time.time()
+        self.amplitude = 0.02
+        self.frequency = 3
 
         self.odom_timestamp = None
         self.br = tf2_ros.TransformBroadcaster(self)
@@ -119,6 +124,13 @@ class ImageProcessor(Node):
         #self.get_logger().info(f'Static point in world frame: {self.static_point_world_frame}\n')
         #self.get_logger().info(f'Received robot pose: {self.robot_pose.position.x}, {self.robot_pose.position.y}, {self.robot_pose.position.z}\n')
 
+    def move_marker(self, point_in_camera_frame):
+        elapsed_time = time.time() - self.start_time
+        y = self.amplitude * np.sin(self.frequency * elapsed_time) + point_in_camera_frame[1]
+        point_in_camera_frame[1] = y
+
+
+
     def image_callback(self, msg):
         if self.robot_pose is None or self.static_point_world_frame is None:
             self.get_logger().info('Robot pose or static point not yet received\n')
@@ -131,6 +143,7 @@ class ImageProcessor(Node):
 
         if point_in_camera_frame is not None:
             # Project the 3D point to 2D using the camera intrinsic matrix
+            self.move_marker(point_in_camera_frame)
             point_2d_homogeneous = self.camera_matrix @ point_in_camera_frame
             self.get_logger().info(f'Point 2D homogeneous before normalization: {point_2d_homogeneous}\n')
 
