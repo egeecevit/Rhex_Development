@@ -74,9 +74,10 @@ class ImageProcessor(Node):
         self.window_name = 'Image with 3D point'
         self.clicked_point = None
         self.point_cloud = None
-        self.x = 0.0
-        self.y = 0.0
-        self.z = 0.0
+        self.point_x = 0.0
+        self.point_y = 0.0
+        self.point_z = 0.0
+        self.point_in_world_frame = None
 
         cv2.namedWindow(self.window_name)
         self.odom_timestamp = None
@@ -118,7 +119,7 @@ class ImageProcessor(Node):
                 transform = self.tf_buffer.lookup_transform('world', 'camera_depth_frame', rclpy.time.Time(seconds=0))
                 point_stamped = PointStamped()
                 point_stamped.header.frame_id = 'camera_depth_frame'
-                #point_stamped.header.stamp = self.odom_timestamp
+                point_stamped.header.stamp = self.odom_timestamp
                 point_stamped.point.x = x
                 point_stamped.point.y = y
                 point_stamped.point.z = z
@@ -133,6 +134,30 @@ class ImageProcessor(Node):
                 return None
         
             return point_in_world_frame
+        else:
+            return
+        
+    def listen_transform_reverse(self, x, y, z):
+        if self.tf_buffer.can_transform('camera_depth_frame', 'world', rclpy.time.Time(seconds=0)):
+            try:
+                transform = self.tf_buffer.lookup_transform('camera_depth_frame', 'world', rclpy.time.Time(seconds=0))
+                point_stamped = PointStamped()
+                point_stamped.header.frame_id = 'world'
+                point_stamped.header.stamp = self.odom_timestamp
+                point_stamped.point.x = x
+                point_stamped.point.y = y
+                point_stamped.point.z = z
+                point_in_camera_frame_stamped = do_transform_point(point_stamped, transform)
+                point_in_camera_frame = np.array([point_in_camera_frame_stamped.point.x,
+                                                  point_in_camera_frame_stamped.point.y,
+                                                  point_in_camera_frame_stamped.point.z])
+                #self.get_logger().info(f'Point in camera frame: {point_in_camera_frame}\n')
+
+            except TransformException as e:
+                self.get_logger().warn(f'Failed to get transform: {e}')
+                return None
+        
+            return point_in_camera_frame
         else:
             return
 
@@ -151,6 +176,37 @@ class ImageProcessor(Node):
     def mouse_click(self, event, x, y, flags, param):
         if event == cv2.EVENT_LBUTTONDOWN:
             self.clicked_point = np.array([x, y, 1])
+            self.process_click()
+
+    def process_click(self):
+        if self.clicked_point is None or self.point_cloud is None:
+            return
+        
+        u, v, k = self.clicked_point
+        idx = v * 640 + u  # Calculate the flat index for the point cloud
+
+        # Check if the index is valid and within bounds
+        if idx < 0 or idx >= self.point_cloud.shape[0]:
+            self.get_logger().warn(f'Clicked index {idx} is out of bounds for point cloud size {self.point_cloud.shape[0]}')
+            return
+
+        # Fetch the 3D point corresponding to the clicked pixel
+        point = self.point_cloud[idx]
+        self.point_x, self.point_y, self.point_z = float(point[0]), float(point[1]), float(point[2])
+
+        # Check if the point is valid
+        if not np.isfinite([self.point_x, self.point_y, self.point_z]).all():
+            #self.get_logger().warn(f'Invalid point at index {idx}: {point}')
+            return
+
+        # Transform the 3D point to the world frame using the current transformation
+        self.point_in_world_frame = self.listen_transform(self.point_x, self.point_y, self.point_z)
+
+        if self.point_in_world_frame is not None:
+            # Publish the point to visualize it in RViz
+            self.publish_point(self.point_in_world_frame[0], self.point_in_world_frame[1], self.point_in_world_frame[2])
+            #self.get_logger().info(f'Published point in world frame: {point_in_world_frame}')
+
     
     def get_clicked_point(self):
         return self.clicked_point
@@ -177,21 +233,15 @@ class ImageProcessor(Node):
         cv2.setMouseCallback(self.window_name, self.mouse_click)
 
         if self.clicked_point is not None:
-            idx = (self.clicked_point[1]) * 640 + self.clicked_point[0]
-
-            point = self.point_cloud[idx]
-            point_x, point_y, point_z = float(point[0]), float(point[1]), float(point[2])
-
-
-            point_in_world_frame = self.listen_transform(point_x, point_y, point_z)
-
-            self.publish_point(point_in_world_frame[0], point_in_world_frame[1], point_in_world_frame[2])
-
-            point_camera_frame = np.array([point_x, point_y, point_z])
+            #point_camera_frame = np.array([self.point_x, self.point_y, self.point_z])
+            point_camera_frame = self.listen_transform_reverse(self.point_in_world_frame[0], self.point_in_world_frame[1], self.point_in_world_frame[2])
 
             point_2d_homogeneous = self.camera_matrix @ point_camera_frame
 
             point_2d = point_2d_homogeneous[:2] / point_2d_homogeneous[2]
+
+            print(f'point2d: {point_2d}, homo: {point_2d_homogeneous}')
+            #print(f'camera frame: {point_camera_frame}, pc data: {[self.point_x, self.point_y, self.point_z]}')
 
             if 0 <= point_2d[0] and point_2d[0] < cv_image.shape[1] and 0 <= point_2d[1] and point_2d[1] < cv_image.shape[0] and point_camera_frame[2] > 0:
                 point_2d = (int(point_2d[0]), int(point_2d[1]))

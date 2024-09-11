@@ -1,1 +1,0 @@
-/home/ege/development/rhex_ws/src/control_server/scripts/controller_server_network.py
