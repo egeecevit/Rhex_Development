@@ -233,7 +233,6 @@ class ImageProcessor(Node):
         cv2.setMouseCallback(self.window_name, self.mouse_click)
 
         if self.clicked_point is not None:
-            #point_camera_frame = np.array([self.point_x, self.point_y, self.point_z])
             point_camera_frame = self.listen_transform_reverse(self.point_in_world_frame[0], self.point_in_world_frame[1], self.point_in_world_frame[2])
 
             point_2d_homogeneous = self.camera_matrix @ point_camera_frame

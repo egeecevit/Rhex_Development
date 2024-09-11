@@ -143,7 +143,7 @@ class ImageProcessor(Node):
 
         if point_in_camera_frame is not None:
             # Project the 3D point to 2D using the camera intrinsic matrix
-            self.move_marker(point_in_camera_frame)
+            #self.move_marker(point_in_camera_frame)
             point_2d_homogeneous = self.camera_matrix @ point_in_camera_frame
             self.get_logger().info(f'Point 2D homogeneous before normalization: {point_2d_homogeneous}\n')
 
