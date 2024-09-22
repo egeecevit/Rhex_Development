@@ -45,17 +45,17 @@ class ImageProcessor(Node):
         self.bridge = CvBridge()
 
         # Camera intrinsic parameters
-        width = 640
-        height = 480
+        self.width = 640
+        self.height = 480
         horizontal_fov = 1.047198  # radians
 
         # Calculate the focal lengths
-        fx = width / (2 * np.tan(horizontal_fov / 2))
+        fx = self.width / (2 * np.tan(horizontal_fov / 2))
         fy = fx
 
         # Principal points (assuming the camera center is the image center)
-        cx = width / 2
-        cy = height / 2
+        cx = self.width / 2
+        cy = self.height / 2
 
         self.camera_matrix = np.array([[fx, 0, cx],
                                        [0, fy, cy],
@@ -68,9 +68,6 @@ class ImageProcessor(Node):
         self.static_point_world_frame = None
         self.fov_horizontal = 60  # in degrees
         self.fov_vertical = 45  # in degrees
-        self.start_time = time.time()
-        self.amplitude = 0.02
-        self.frequency = 3
         self.window_name = 'Image with 3D point'
         self.clicked_point = None
         self.point_cloud = None
@@ -90,9 +87,6 @@ class ImageProcessor(Node):
     def pc_callback(self, msg: PointCloud2):
         self.point_cloud = pc2.read_points_numpy(msg, field_names=['x', 'y', 'z'], skip_nans=True, reshape_organized_cloud=True)
         
-
-
-
     def broadcast_transform(self):
         if self.robot_pose is not None and self.odom_timestamp is not None:
             t = TransformStamped()
@@ -165,13 +159,6 @@ class ImageProcessor(Node):
         self.robot_pose = msg.pose.pose
         self.odom_timestamp = msg.header.stamp
         self.broadcast_transform()
-            
-
-    def move_marker(self, point_in_camera_frame):
-        elapsed_time = time.time() - self.start_time
-        y = self.amplitude * np.sin(self.frequency * elapsed_time) + point_in_camera_frame[1]
-        point_in_camera_frame[1] = y
-
 
     def mouse_click(self, event, x, y, flags, param):
         if event == cv2.EVENT_LBUTTONDOWN:
@@ -183,34 +170,27 @@ class ImageProcessor(Node):
             return
         
         u, v, k = self.clicked_point
-        idx = v * 640 + u  # Calculate the flat index for the point cloud
+        idx = v * self.width + u  # Calculate the flat index for the point cloud
 
         # Check if the index is valid and within bounds
         if idx < 0 or idx >= self.point_cloud.shape[0]:
             self.get_logger().warn(f'Clicked index {idx} is out of bounds for point cloud size {self.point_cloud.shape[0]}')
             return
 
-        # Fetch the 3D point corresponding to the clicked pixel
+        # Get the 3D point corresponding to the clicked pixel
         point = self.point_cloud[idx]
         self.point_x, self.point_y, self.point_z = float(point[0]), float(point[1]), float(point[2])
 
         # Check if the point is valid
         if not np.isfinite([self.point_x, self.point_y, self.point_z]).all():
-            #self.get_logger().warn(f'Invalid point at index {idx}: {point}')
-            return
+            self.get_logger().warn(f'Invalid point clicked at index {idx}: {point}')
 
-        # Transform the 3D point to the world frame using the current transformation
+        # Transform the 3D point to the world frame
         self.point_in_world_frame = self.listen_transform(self.point_x, self.point_y, self.point_z)
 
-        if self.point_in_world_frame is not None:
-            # Publish the point to visualize it in RViz
-            self.publish_point(self.point_in_world_frame[0], self.point_in_world_frame[1], self.point_in_world_frame[2])
-            #self.get_logger().info(f'Published point in world frame: {point_in_world_frame}')
+        # Publish the point to visualize it in RViz
+        self.publish_point(self.point_in_world_frame[0], self.point_in_world_frame[1], self.point_in_world_frame[2])
 
-    
-    def get_clicked_point(self):
-        return self.clicked_point
-    
 
     def publish_point(self, x, y, z):
         point = PointStamped()
@@ -239,9 +219,6 @@ class ImageProcessor(Node):
 
             point_2d = point_2d_homogeneous[:2] / point_2d_homogeneous[2]
 
-            print(f'point2d: {point_2d}, homo: {point_2d_homogeneous}')
-            #print(f'camera frame: {point_camera_frame}, pc data: {[self.point_x, self.point_y, self.point_z]}')
-
             if 0 <= point_2d[0] and point_2d[0] < cv_image.shape[1] and 0 <= point_2d[1] and point_2d[1] < cv_image.shape[0] and point_camera_frame[2] > 0:
                 point_2d = (int(point_2d[0]), int(point_2d[1]))
                 # Draw the point on the image
@@ -249,7 +226,7 @@ class ImageProcessor(Node):
 
                 # Coordinates of the center and radius
                 center = point_2d
-                radius = 10  # Adjust the radius as needed
+                radius = 10 
 
                 # Draw the circle part of the teardrop
                 cv2.circle(cv_image, center, radius, color, -1)
@@ -264,10 +241,7 @@ class ImageProcessor(Node):
                 cv2.fillPoly(cv_image, [points], color)
 
             else:
-                self.get_logger().info('Projected point is outside the image boundaries\n')
-
-            
-
+                self.get_logger().info('Projected point is outside the image boundaries or clicked outside PointCloud Data\n')
 
         # Display the image
         cv2.imshow('Image with 3D point', cv_image)
