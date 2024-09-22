@@ -1,6 +1,10 @@
 # AR Marking With PC2 Data
 ## Task Description
 This task is about matching and visualizing a clicked point from Cv2 window to PointCloud2 data which can be used for landmarking or checkpointing purposes.
+## Node Description
+**ar_point.py:** This Node is the main node with PC2 implementation.
+**mark_point.py:** This Node is the previous implementation with fixed point visualization.
+**obtain_image.py:** This Node is a trial node which is only used to obtain the image from the simulation environment. 
 ### Steps To Implement
 **1.** Camera feed is gathered from the simulation environment from `/depth_camera/image_raw` topic and visualized using CvBridge and Cv2.
 
