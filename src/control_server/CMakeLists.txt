@@ -13,6 +13,7 @@ find_package(std_msgs REQUIRED)
 install(
     PROGRAMS
         scripts/controller_server_network.py
+        scripts/miscellaneous.py
     DESTINATION
         lib/${PROJECT_NAME}
 )

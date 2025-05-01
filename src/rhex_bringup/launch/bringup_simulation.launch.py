@@ -49,10 +49,10 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        start_script_supervisor,
+        # start_script_supervisor,
         start_display_rhex,
         start_launch_controller_server,
-        start_script_gui,
+        # start_script_gui,
         #camera_node
         #ar_mark_node
     ])

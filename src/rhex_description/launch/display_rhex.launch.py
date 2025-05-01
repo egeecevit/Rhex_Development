@@ -31,7 +31,7 @@ def generate_launch_description():
 
     declare_world = DeclareLaunchArgument(
         name="world",
-        default_value="empty.world",
+        default_value="rhex_world.world",
         description='world to launch rhex in'
     )
 
